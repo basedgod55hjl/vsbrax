@@ -34,8 +34,8 @@ PRIMAL_HEX: `4f5349524953424c58434b` · This is a NEW system, built on open-sour
 
 | Layer | What it does | Source base |
 |---|---|---|
-| Editor core | text editing, workbench, panels | open-source VS Code (MIT) — rebranded |
-| Agent core | multi-model coding agent, TUI, swarm | open-source jcode (MIT) — rebranded |
+| Editor core | text editing, workbench, panels | open-source editor base (MIT) — rebranded |
+| Agent core | multi-model coding agent, TUI, swarm — crate family `abrasax-*` (79 crates) | open-source agent base (MIT) — renamed end-to-end |
 | Harness | wire envelopes, pipe bus, agent host | ABRASAX (ours) |
 | Providers | any OpenAI-compatible API incl. local LM Studio | config-driven |
 | Memory | self-growing interaction log + mesh memory | ours |
