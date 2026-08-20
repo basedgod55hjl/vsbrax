@@ -1,0 +1,9 @@
+[package]
+name = "abrasax-fuzzy"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+name = "abrasax_fuzzy"
+path = "src/lib.rs"

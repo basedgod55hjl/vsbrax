@@ -1,7 +1,7 @@
 {
-  "name": "@jcode/sdk",
+  "name": "@abrasax/sdk",
   "version": "0.1.0",
-  "description": "TypeScript SDK for the jcode harness API (protocol v1)",
+  "description": "TypeScript SDK for the abrasax harness API (protocol v1)",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,0 +1,11 @@
+[package]
+name = "abrasax-tui-render"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+abrasax-tui-style = { path = "../abrasax-tui-style" }
+ratatui = "0.30"
+unicode-width = "0.2"

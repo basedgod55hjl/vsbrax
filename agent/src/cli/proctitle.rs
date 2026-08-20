@@ -10,32 +10,32 @@ use crate::process_title::{compact_process_title, session_name, set_title};
 
 pub(crate) fn initial_title(args: &Args) -> String {
     match &args.command {
-        Some(Command::Serve { .. }) => "jcode:server".to_string(),
-        Some(Command::Acp) => "jcode acp".to_string(),
-        Some(Command::Server { .. }) => "jcode server".to_string(),
-        Some(Command::Connect) => "jcode:client".to_string(),
-        Some(Command::Run { .. }) => "jcode run".to_string(),
-        Some(Command::Login { .. }) => "jcode login".to_string(),
-        Some(Command::Account { .. }) => "jcode account".to_string(),
-        Some(Command::Repl) => "jcode repl".to_string(),
-        Some(Command::Update) => "jcode update".to_string(),
-        Some(Command::Version { .. }) => "jcode version".to_string(),
-        Some(Command::Usage { .. }) => "jcode usage".to_string(),
-        Some(Command::SelfDev { .. }) => "jcode:selfdev".to_string(),
-        Some(Command::Debug { .. }) => "jcode debug".to_string(),
-        Some(Command::Auth(_)) => "jcode auth".to_string(),
-        Some(Command::Provider(_)) => "jcode provider".to_string(),
-        Some(Command::Memory(_)) => "jcode memory".to_string(),
-        Some(Command::Session(_)) => "jcode session".to_string(),
+        Some(Command::Serve { .. }) => "abrasax:server".to_string(),
+        Some(Command::Acp) => "abrasax acp".to_string(),
+        Some(Command::Server { .. }) => "abrasax server".to_string(),
+        Some(Command::Connect) => "abrasax:client".to_string(),
+        Some(Command::Run { .. }) => "abrasax run".to_string(),
+        Some(Command::Login { .. }) => "abrasax login".to_string(),
+        Some(Command::Account { .. }) => "abrasax account".to_string(),
+        Some(Command::Repl) => "abrasax repl".to_string(),
+        Some(Command::Update) => "abrasax update".to_string(),
+        Some(Command::Version { .. }) => "abrasax version".to_string(),
+        Some(Command::Usage { .. }) => "abrasax usage".to_string(),
+        Some(Command::SelfDev { .. }) => "abrasax:selfdev".to_string(),
+        Some(Command::Debug { .. }) => "abrasax debug".to_string(),
+        Some(Command::Auth(_)) => "abrasax auth".to_string(),
+        Some(Command::Provider(_)) => "abrasax provider".to_string(),
+        Some(Command::Memory(_)) => "abrasax memory".to_string(),
+        Some(Command::Session(_)) => "abrasax session".to_string(),
         Some(Command::Ambient(subcommand)) => match subcommand {
-            AmbientCommand::RunVisible => "jcode ambient visible".to_string(),
-            _ => "jcode ambient".to_string(),
+            AmbientCommand::RunVisible => "abrasax ambient visible".to_string(),
+            _ => "abrasax ambient".to_string(),
         },
-        Some(Command::Cloud(_)) => "jcode cloud".to_string(),
-        Some(Command::Pair { .. }) => "jcode pair".to_string(),
-        Some(Command::Permissions) => "jcode permissions".to_string(),
-        Some(Command::Transcript { .. }) => "jcode transcript".to_string(),
-        Some(Command::Dictate { .. }) => "jcode dictate".to_string(),
+        Some(Command::Cloud(_)) => "abrasax cloud".to_string(),
+        Some(Command::Pair { .. }) => "abrasax pair".to_string(),
+        Some(Command::Permissions) => "abrasax permissions".to_string(),
+        Some(Command::Transcript { .. }) => "abrasax transcript".to_string(),
+        Some(Command::Dictate { .. }) => "abrasax dictate".to_string(),
         Some(Command::SetupHotkey {
             listen_macos_hotkey,
             notify_cli_launch,
@@ -43,36 +43,36 @@ pub(crate) fn initial_title(args: &Args) -> String {
             uninstall,
         }) => {
             if *listen_macos_hotkey || *listen_windows_hotkey {
-                "jcode hotkey listener".to_string()
+                "abrasax hotkey listener".to_string()
             } else if notify_cli_launch.is_some() {
-                "jcode shortcut reminder".to_string()
+                "abrasax shortcut reminder".to_string()
             } else if *uninstall {
-                "jcode hotkey uninstall".to_string()
+                "abrasax hotkey uninstall".to_string()
             } else {
-                "jcode hotkey setup".to_string()
+                "abrasax hotkey setup".to_string()
             }
         }
-        Some(Command::Browser { .. }) => "jcode browser".to_string(),
-        Some(Command::Replay { .. }) => "jcode replay".to_string(),
-        Some(Command::Model(_)) => "jcode model".to_string(),
-        Some(Command::ProviderTestCoverage { .. }) => "jcode provider-test-coverage".to_string(),
-        Some(Command::ProviderDoctor { .. }) => "jcode provider-doctor".to_string(),
-        Some(Command::AuthTest { .. }) => "jcode auth-test".to_string(),
-        Some(Command::Restart { .. }) => "jcode restart".to_string(),
-        Some(Command::Menubar { .. }) => "jcode menubar".to_string(),
-        Some(Command::SetupLauncher) => "jcode setup-launcher".to_string(),
+        Some(Command::Browser { .. }) => "abrasax browser".to_string(),
+        Some(Command::Replay { .. }) => "abrasax replay".to_string(),
+        Some(Command::Model(_)) => "abrasax model".to_string(),
+        Some(Command::ProviderTestCoverage { .. }) => "abrasax provider-test-coverage".to_string(),
+        Some(Command::ProviderDoctor { .. }) => "abrasax provider-doctor".to_string(),
+        Some(Command::AuthTest { .. }) => "abrasax auth-test".to_string(),
+        Some(Command::Restart { .. }) => "abrasax restart".to_string(),
+        Some(Command::Menubar { .. }) => "abrasax menubar".to_string(),
+        Some(Command::SetupLauncher) => "abrasax setup-launcher".to_string(),
         None => {
             if let Some(resume) = args.resume.as_deref().filter(|resume| !resume.is_empty()) {
                 let prefix = if crate::cli::selfdev::client_selfdev_requested() {
-                    "jcode:d:"
+                    "abrasax:d:"
                 } else {
-                    "jcode:c:"
+                    "abrasax:c:"
                 };
                 compact_process_title(prefix, Some(&session_name(resume)))
             } else if crate::cli::selfdev::client_selfdev_requested() {
-                "jcode:selfdev".to_string()
+                "abrasax:selfdev".to_string()
             } else {
-                "jcode:client".to_string()
+                "abrasax:client".to_string()
             }
         }
     }
@@ -88,7 +88,7 @@ mod tests {
     use crate::storage::lock_test_env;
     use clap::Parser;
 
-    const SELFDEV_ENV: &str = jcode_selfdev_types::CLIENT_SELFDEV_ENV;
+    const SELFDEV_ENV: &str = abrasax_selfdev_types::CLIENT_SELFDEV_ENV;
 
     fn with_selfdev_env_removed<T>(f: impl FnOnce() -> T) -> T {
         let _guard = lock_test_env();
@@ -104,36 +104,36 @@ mod tests {
     #[test]
     fn initial_title_labels_server() {
         with_selfdev_env_removed(|| {
-            let args = Args::parse_from(["jcode", "serve"]);
-            assert_eq!(initial_title(&args), "jcode:server");
+            let args = Args::parse_from(["abrasax", "serve"]);
+            assert_eq!(initial_title(&args), "abrasax:server");
         });
     }
 
     #[test]
     fn initial_title_labels_resume_client_with_short_name() {
         with_selfdev_env_removed(|| {
-            let args = Args::parse_from(["jcode", "--resume", "session_fox_123"]);
-            assert_eq!(initial_title(&args), "jcode:c:fox");
+            let args = Args::parse_from(["abrasax", "--resume", "session_fox_123"]);
+            assert_eq!(initial_title(&args), "abrasax:c:fox");
         });
     }
 
     #[test]
     fn initial_title_labels_selfdev_command() {
         with_selfdev_env_removed(|| {
-            let args = Args::parse_from(["jcode", "self-dev"]);
-            assert_eq!(initial_title(&args), "jcode:selfdev");
+            let args = Args::parse_from(["abrasax", "self-dev"]);
+            assert_eq!(initial_title(&args), "abrasax:selfdev");
         });
     }
 
     #[test]
     fn initial_title_labels_windows_hotkey_listener() {
-        let args = Args::parse_from(["jcode", "setup-hotkey", "--listen-windows-hotkey"]);
-        assert_eq!(initial_title(&args), "jcode hotkey listener");
+        let args = Args::parse_from(["abrasax", "setup-hotkey", "--listen-windows-hotkey"]);
+        assert_eq!(initial_title(&args), "abrasax hotkey listener");
     }
 
     #[test]
     fn initial_title_labels_hotkey_uninstall() {
-        let args = Args::parse_from(["jcode", "setup-hotkey", "--uninstall"]);
-        assert_eq!(initial_title(&args), "jcode hotkey uninstall");
+        let args = Args::parse_from(["abrasax", "setup-hotkey", "--uninstall"]);
+        assert_eq!(initial_title(&args), "abrasax hotkey uninstall");
     }
 }

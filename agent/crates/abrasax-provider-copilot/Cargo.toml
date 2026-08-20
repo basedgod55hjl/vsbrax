@@ -1,0 +1,9 @@
+[package]
+name = "abrasax-provider-copilot"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+abrasax-message-types = { path = "../abrasax-message-types" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

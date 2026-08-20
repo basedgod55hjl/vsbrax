@@ -1,4 +1,4 @@
-﻿# Discovery elicitation eval: task specification
+# Discovery elicitation eval: task specification
 
 This document defines what a *task* is in the discovery elicitation eval, what
 each field means, which invariants a task must satisfy, and how a task is
@@ -199,7 +199,7 @@ browse as `elicited`. It records the listing size for context but never gates on
 it. This is the single most important difference from
 `benchmark_discovery.py`.
 
-**5.2 Benchmark marking.** The runner sets `JCODE_DISCOVERY_BENCHMARK=1`, so
+**5.2 Benchmark marking.** The runner sets `ABRASAX_DISCOVERY_BENCHMARK=1`, so
 requests carry `x-VS-BRAX Agent-discovery-benchmark: 1` and land in D1 with
 `benchmark_run = 1`. All production discovery analysis filters
 `benchmark_run = 0`; an eval that pollutes the demand signal is worse than no

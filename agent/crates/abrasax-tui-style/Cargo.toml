@@ -1,0 +1,9 @@
+[package]
+name = "abrasax-tui-style"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+abrasax-logging = { path = "../abrasax-logging" }
+ratatui = "0.30"

@@ -1,8 +1,8 @@
 import Foundation
-import JCodeKit
+import AbrasaxKit
 import Observation
 
-/// Observable glue between JCodeKit and the SwiftUI views.
+/// Observable glue between AbrasaxKit and the SwiftUI views.
 ///
 /// Owns the credential store, the active `Connection`, and the derived
 /// `SessionState`. Contains no protocol or state-transition logic itself;
@@ -184,7 +184,7 @@ final class AppModel {
     }
 
     private func deviceID() -> String {
-        let key = "jcode.device.id"
+        let key = "abrasax.device.id"
         if let existing = UserDefaults.standard.string(forKey: key) {
             return existing
         }

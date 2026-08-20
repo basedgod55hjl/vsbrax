@@ -1,0 +1,10 @@
+[package]
+name = "abrasax-provider-antigravity"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+abrasax-provider-gemini = { path = "../abrasax-provider-gemini" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

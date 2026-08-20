@@ -1,4 +1,4 @@
-﻿# Plan: Making the Memory Graph Earn Its Keep
+# Plan: Making the Memory Graph Earn Its Keep
 
 > Status: Proposal. Companion to MEMORY_ARCHITECTURE.md. Goal: best recall accuracy.
 
@@ -59,7 +59,7 @@ Mode 2 starts from that same ceiling and adds LLM rewriting + listwise judgment,
 so it's strictly >= Mode 1. The harness (recall-1) tracks both columns each
 change so neither regresses.
 
-## Two operating modes (gate: `agents.memory_sidecar_enabled`, env `JCODE_MEMORY_SIDECAR_ENABLED`, default off)
+## Two operating modes (gate: `agents.memory_sidecar_enabled`, env `ABRASAX_MEMORY_SIDECAR_ENABLED`, default off)
 
 The system runs in two distinct modes; recall behavior differs substantially.
 

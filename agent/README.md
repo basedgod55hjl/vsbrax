@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # VS-BRAX Agent
 
@@ -302,7 +302,7 @@ The custom scrollback implementation of VS-BRAX Agent allows it to do much more 
 
 VS-BRAX Agent is left-aligned by default. You can switch to centered mode with the `Alt+C` hotkey, with the `/alignment` command, or in the config.
 
-To disable emoji globally in TUI and CLI output, set `emoji = false` under `[display]` in `~/.VS-BRAX Agent/config.toml`, or launch with `JCODE_NO_EMOJI=1`. VS-BRAX Agent replaces emoji with compact ASCII markers while preserving other Unicode text.
+To disable emoji globally in TUI and CLI output, set `emoji = false` under `[display]` in `~/.VS-BRAX Agent/config.toml`, or launch with `ABRASAX_NO_EMOJI=1`. VS-BRAX Agent replaces emoji with compact ASCII markers while preserving other Unicode text.
 
 ---
 
@@ -371,7 +371,7 @@ There are two ways to set one up:
 
 Useful environment overrides for these endpoints:
 
-- `JCODE_STREAM_IDLE_TIMEOUT_SECS` — raise the base streaming idle timeout (default 180s) for slow reasoning models that think silently before emitting tokens. High reasoning efforts scale this automatically (high 2x, xhigh 3x, max 4x). Also settable as `[provider] stream_idle_timeout_secs` in `config.toml`.
+- `ABRASAX_STREAM_IDLE_TIMEOUT_SECS` — raise the base streaming idle timeout (default 180s) for slow reasoning models that think silently before emitting tokens. High reasoning efforts scale this automatically (high 2x, xhigh 3x, max 4x). Also settable as `[provider] stream_idle_timeout_secs` in `config.toml`.
 - Per-model `context_window` (alias `context_limit`) in a `[[providers.<name>.models]]` entry — set the context window when the endpoint has no usable `/v1/models` response, so VS-BRAX Agent does not fall back to the generic 200k default.
 - `extra_body` — inject non-standard top-level fields into every chat/completions request body for backends that require them. See [Extra request-body fields](#extra-request-body-fields-extra_body) below.
 
@@ -391,7 +391,7 @@ printf '%s' "$MY_API_KEY" | VS-BRAX Agent provider add my-api \
   --json
 
 # Smoke test the profile.
-VS-BRAX Agent --provider-profile my-api auth-test --prompt 'Reply exactly JCODE_PROVIDER_SETUP_OK'
+VS-BRAX Agent --provider-profile my-api auth-test --prompt 'Reply exactly ABRASAX_PROVIDER_SETUP_OK'
 
 # Use it directly.
 VS-BRAX Agent --provider-profile my-api run 'hello'
@@ -441,7 +441,7 @@ default_model = "my-model-id"
 [providers.my-api]
 type = "openai-compatible"
 base_url = "https://llm.example.com/v1"
-api_key_env = "JCODE_PROVIDER_MY_API_API_KEY"
+api_key_env = "ABRASAX_PROVIDER_MY_API_API_KEY"
 env_file = "provider-my-api.env"
 default_model = "my-model-id"
 
@@ -468,13 +468,13 @@ Some OpenAI-compatible backends require non-standard top-level request fields. F
    reasoning_effort = "high"
    ```
 
-2. For built-in profiles (e.g. `nvidia-nim`) or any endpoint, via the `JCODE_OPENAI_EXTRA_BODY` environment variable (a JSON object string). It can live in the provider's env file (`~/.config/VS-BRAX Agent/nvidia-nim.env`) next to the API key:
+2. For built-in profiles (e.g. `nvidia-nim`) or any endpoint, via the `ABRASAX_OPENAI_EXTRA_BODY` environment variable (a JSON object string). It can live in the provider's env file (`~/.config/VS-BRAX Agent/nvidia-nim.env`) next to the API key:
 
    ```bash
-   JCODE_OPENAI_EXTRA_BODY={"chat_template_kwargs":{"thinking":true,"reasoning_effort":"high"}}
+   ABRASAX_OPENAI_EXTRA_BODY={"chat_template_kwargs":{"thinking":true,"reasoning_effort":"high"}}
    ```
 
-Keys from `extra_body` are merged last and override any VS-BRAX Agent-generated body field with the same name (`JCODE_OPENAI_EXTRA_BODY` wins over the config `extra_body` on key collisions). Invalid values are logged and ignored rather than failing the request.
+Keys from `extra_body` are merged last and override any VS-BRAX Agent-generated body field with the same name (`ABRASAX_OPENAI_EXTRA_BODY` wins over the config `extra_body` on key collisions). Invalid values are logged and ignored rather than failing the request.
 
 The custom OpenAI-compatible provider reads overrides from environment variables or from an env file in VS-BRAX Agent's app config directory. On Linux this is usually `~/.config/VS-BRAX Agent/`, so the default file is usually:
 
@@ -485,8 +485,8 @@ The custom OpenAI-compatible provider reads overrides from environment variables
 Example for a local or LAN vLLM server:
 
 ```bash
-JCODE_OPENAI_COMPAT_API_BASE=http://192.168.1.50:8000/v1
-JCODE_OPENAI_COMPAT_DEFAULT_MODEL=Qwen/Qwen3-Coder-30B-A3B-Instruct
+ABRASAX_OPENAI_COMPAT_API_BASE=http://192.168.1.50:8000/v1
+ABRASAX_OPENAI_COMPAT_DEFAULT_MODEL=Qwen/Qwen3-Coder-30B-A3B-Instruct
 # Optional if your server expects auth
 OPENAI_COMPAT_API_KEY=your-token-here
 ```

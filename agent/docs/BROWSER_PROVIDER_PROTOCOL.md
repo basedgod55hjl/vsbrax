@@ -1,4 +1,4 @@
-﻿# Browser Provider Protocol
+# Browser Provider Protocol
 
 Status: draft
 Owner: VS-BRAX Agent
@@ -297,9 +297,9 @@ Request:
 
 ```json
 {
-  "client_session_id": "jcode_session_123",
+  "client_session_id": "abrasax_session_123",
   "browser_preference": "auto",
-  "isolation": "per_jcode_session",
+  "isolation": "per_abrasax_session",
   "attach": "prefer",
   "persist": true,
   "metadata": {
@@ -317,7 +317,7 @@ Response:
   "browser_family": "firefox",
   "browser_label": "Firefox",
   "attached_to_existing_browser": true,
-  "isolation": "per_jcode_session",
+  "isolation": "per_abrasax_session",
   "default_page_id": "page_1"
 }
 ```

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { JcodeClient, HarnessError, NdjsonDecoder } from "../dist/index.js";
+import { AbrasaxClient, HarnessError, NdjsonDecoder } from "../dist/index.js";
 import { startMockHarness } from "./mock-harness.ts";
 
 test("ndjson decoder reassembles frames split across chunks", () => {
@@ -14,7 +14,7 @@ test("ndjson decoder reassembles frames split across chunks", () => {
 
 test("handshake records server identity and capabilities", async () => {
   const server = await startMockHarness();
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   assert.equal(client.server, "mock/0.1");
   assert.deepEqual(client.capabilities, ["sessions", "streaming"]);
   client.close();
@@ -38,7 +38,7 @@ test("replies are correlated by id even when out of order", async () => {
       }
     },
   });
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   const [, sessions] = await Promise.all([client.ping(), client.listSessions()]);
   assert.deepEqual(sessions, [{ session_id: "s1", status: "idle" }]);
   client.close();
@@ -57,7 +57,7 @@ test("error frames reject as HarnessError", async () => {
       });
     },
   });
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   await assert.rejects(() => client.attachSession("nope"), (error: unknown) => {
     assert.ok(error instanceof HarnessError);
     assert.equal((error as HarnessError).code, "unknown_session");
@@ -103,7 +103,7 @@ test("run() collects a full turn and auto-approves permissions", async () => {
       }
     },
   });
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   const turn = await client.run("s1", "hi", { autoApprove: true });
   assert.equal(turn.text, "hello world");
   assert.equal(turn.reasoning, "think");
@@ -117,7 +117,7 @@ test("run() collects a full turn and auto-approves permissions", async () => {
 
 test("events() buffers while the consumer is busy and filters by session", async () => {
   const server = await startMockHarness();
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   const stream = client.events("s1");
   const collected: string[] = [];
   const consumer = (async () => {
@@ -142,7 +142,7 @@ test("events() buffers while the consumer is busy and filters by session", async
 
 test("unknown event kinds still surface on the generic channel", async () => {
   const server = await startMockHarness();
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   const seen = new Promise<any>((resolve) => client.once("event", resolve));
   server.broadcast({ v: 1, ev: "some_future_event", payload: 1 });
   const frame = await seen;
@@ -153,7 +153,7 @@ test("unknown event kinds still surface on the generic channel", async () => {
 
 test("pending requests reject when the connection drops", async () => {
   const server = await startMockHarness();
-  const client = await JcodeClient.connect({ socketPath: server.socketPath });
+  const client = await AbrasaxClient.connect({ socketPath: server.socketPath });
   const pending = client.ping();
   await server.close();
   await assert.rejects(() => pending);

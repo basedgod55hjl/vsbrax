@@ -1,12 +1,12 @@
-﻿# Onboarding sandbox
+# Onboarding sandbox
 
-If you want to iterate on onboarding repeatedly without touching your real auth state, use a separate sandbox rooted under `JCODE_HOME` and `JCODE_RUNTIME_DIR`.
+If you want to iterate on onboarding repeatedly without touching your real auth state, use a separate sandbox rooted under `ABRASAX_HOME` and `ABRASAX_RUNTIME_DIR`.
 
 This repo already supports that isolation:
 
-- `JCODE_HOME` redirects VS-BRAX Agent-owned state such as `~/.VS-BRAX Agent` into a sandbox directory.
-- `JCODE_HOME` also redirects app config into `JCODE_HOME/config/VS-BRAX Agent`.
-- `JCODE_RUNTIME_DIR` redirects sockets and other ephemeral runtime files.
+- `ABRASAX_HOME` redirects VS-BRAX Agent-owned state such as `~/.VS-BRAX Agent` into a sandbox directory.
+- `ABRASAX_HOME` also redirects app config into `ABRASAX_HOME/config/VS-BRAX Agent`.
+- `ABRASAX_RUNTIME_DIR` redirects sockets and other ephemeral runtime files.
 - External auth trust decisions are stored in the sandbox config, so a fresh sandbox starts with no trusted external auth imports.
 
 ## Fast start
@@ -36,8 +36,8 @@ scripts/onboarding_sandbox.sh seed-real-logins --with-transcripts
 scripts/onboarding_sandbox.sh fresh-real --with-transcripts
 ```
 
-How it works: when `JCODE_HOME` is set, VS-BRAX Agent resolves every external credential
-and transcript lookup to `$JCODE_HOME/external/<same-relative-path-as-$HOME>`.
+How it works: when `ABRASAX_HOME` is set, VS-BRAX Agent resolves every external credential
+and transcript lookup to `$ABRASAX_HOME/external/<same-relative-path-as-$HOME>`.
 `seed-real-logins` copies your real files there, so detection and import behave
 exactly as they would on a first-run machine that already has those tools
 installed. The copies are real tokens, so the sandbox stays local-only; your
@@ -84,7 +84,7 @@ scripts/onboarding_sandbox.sh VS-BRAX Agent pair
 ## Reusable local auth fixtures
 
 For repeated login testing, use local auth fixtures. A fixture is a copy of a
-sandbox `JCODE_HOME` after you have put it into an interesting state, for
+sandbox `ABRASAX_HOME` after you have put it into an interesting state, for
 example a typical logged-in OpenAI user, an expired token state, or an external
 auth import approval state.
 
@@ -118,9 +118,9 @@ scripts/auth_fixture.sh run normal-openai -- auth status
 
 Useful environment overrides:
 
-- `JCODE_ONBOARDING_SANDBOX`: select which sandbox receives the fixture.
-- `JCODE_ONBOARDING_DIR`: use an explicit sandbox directory.
-- `JCODE_AUTH_FIXTURE_DIR`: use a fixture store outside the repo, for example
+- `ABRASAX_ONBOARDING_SANDBOX`: select which sandbox receives the fixture.
+- `ABRASAX_ONBOARDING_DIR`: use an explicit sandbox directory.
+- `ABRASAX_AUTH_FIXTURE_DIR`: use a fixture store outside the repo, for example
   `~/.local/share/VS-BRAX Agent-auth-fixtures`.
 
 Suggested fixture names:

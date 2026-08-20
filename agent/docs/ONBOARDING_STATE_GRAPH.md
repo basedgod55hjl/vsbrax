@@ -1,4 +1,4 @@
-﻿# Robust Onboarding: An Explicit State-Space Graph + Privacy-Preserving Trace Telemetry
+# Robust Onboarding: An Explicit State-Space Graph + Privacy-Preserving Trace Telemetry
 
 Status: partially implemented (steps 1, 2, 5, 6 landed; see §5)
 Owner: onboarding
@@ -308,7 +308,7 @@ The existing code is in decent shape; this is mostly consolidation.
    flow always had but never modelled) and `check_invariants` enforces the §2.4
    properties. Wired into `scripts/check_guardrails.sh`.
 6. **Trace telemetry.** *Landed as a library.*
-   `jcode_telemetry_core::onboarding_trace` records traversals with bucketed
+   `abrasax_telemetry_core::onboarding_trace` records traversals with bucketed
    timings, a hard step cap, and a closed vocabulary enforced by a test that
    walks the serialized payload and rejects any free text. Not yet emitted from
    the live flow: that waits on step 3, which is what produces the edge events.

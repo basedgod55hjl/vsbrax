@@ -1,4 +1,4 @@
-﻿# Gmail Tool: Composio Managed Backend
+# Gmail Tool: Composio Managed Backend
 
 The native `gmail` tool can source credentials and transport from one of two
 backends. The tool interface, confirmation gating, access-tier logic, and
@@ -24,8 +24,8 @@ is reused.
 
 The backend is resolved from environment at `GmailClient::new()`:
 
-- `JCODE_GMAIL_BACKEND=direct` (or unset) -> direct Google backend.
-- `JCODE_GMAIL_BACKEND=composio` -> Composio backend (requires `COMPOSIO_API_KEY`).
+- `ABRASAX_GMAIL_BACKEND=direct` (or unset) -> direct Google backend.
+- `ABRASAX_GMAIL_BACKEND=composio` -> Composio backend (requires `COMPOSIO_API_KEY`).
 
 If `composio` is requested but `COMPOSIO_API_KEY` is missing, VS-BRAX Agent warns and
 falls back to `direct`.
@@ -69,7 +69,7 @@ a hint telling the agent to run `action: "connect"` first.
    Note the resulting `connected_account_id` if you want to pin it.
 3. Export the variables:
    ```bash
-   export JCODE_GMAIL_BACKEND=composio
+   export ABRASAX_GMAIL_BACKEND=composio
    export COMPOSIO_API_KEY="ck_..."
    # optional:
    export COMPOSIO_GMAIL_CONNECTED_ACCOUNT_ID="ca_..."

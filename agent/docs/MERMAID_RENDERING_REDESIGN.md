@@ -1,4 +1,4 @@
-﻿# ADR: Mermaid Rendering Redesign
+# ADR: Mermaid Rendering Redesign
 
 Date: 2026-05-08
 Status: Proposed
@@ -19,7 +19,7 @@ Observed pain points:
 
 ## Size API direction
 
-The renderer now has an `mmdr-size-api` path guarded by the `mmdr-size-api` feature plus `JCODE_MMDR_SIZE_API_AVAILABLE=1`. That should become the primary path for the redesign:
+The renderer now has an `mmdr-size-api` path guarded by the `mmdr-size-api` feature plus `ABRASAX_MMDR_SIZE_API_AVAILABLE=1`. That should become the primary path for the redesign:
 
 - Renderer should ask Mermaid/layout for measured SVG/canvas dimensions instead of relying on source text complexity estimates for final PNG sizing.
 - `calculate_render_size` should become a request target hint, not the source of truth for output dimensions.

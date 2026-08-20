@@ -10,7 +10,7 @@
  */
 
 import assert from "node:assert/strict";
-import { JcodeClient } from "../dist/index.js";
+import { AbrasaxClient } from "../dist/index.js";
 
 const failures = [];
 async function step(name, fn) {
@@ -23,7 +23,7 @@ async function step(name, fn) {
   }
 }
 
-const client = await JcodeClient.connect({
+const client = await AbrasaxClient.connect({
   clientName: "sdk-control-e2e/0.1",
   requestTimeoutMs: 20_000,
 });
@@ -34,7 +34,7 @@ const id = session.session_id;
 console.log(`session ${id}`);
 
 await step("attachSession on a second connection", async () => {
-  const other = await JcodeClient.connect({
+  const other = await AbrasaxClient.connect({
     clientName: "sdk-control-e2e-2/0.1",
     requestTimeoutMs: 20_000,
   });
@@ -113,7 +113,7 @@ await step("clear empties the transcript", async () => {
 });
 
 await step("peekSession works without attaching", async () => {
-  const other = await JcodeClient.connect({
+  const other = await AbrasaxClient.connect({
     clientName: "sdk-control-e2e-3/0.1",
     requestTimeoutMs: 20_000,
   });

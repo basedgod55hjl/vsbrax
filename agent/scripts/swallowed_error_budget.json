@@ -6,2217 +6,2217 @@
     "unwrap_or_default": 766
   },
   "tracked_files": {
-    "crates/jcode-app-core/src/agent.rs": {
+    "crates/abrasax-app-core/src/agent.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/agent/inline_tail.rs": {
+    "crates/abrasax-app-core/src/agent/inline_tail.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/agent/interrupts.rs": {
+    "crates/abrasax-app-core/src/agent/interrupts.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/agent/streaming.rs": {
+    "crates/abrasax-app-core/src/agent/streaming.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/agent/turn_execution.rs": {
+    "crates/abrasax-app-core/src/agent/turn_execution.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/agent/turn_loops.rs": {
+    "crates/abrasax-app-core/src/agent/turn_loops.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/agent/turn_streaming_mpsc.rs": {
+    "crates/abrasax-app-core/src/agent/turn_streaming_mpsc.rs": {
       "dot_ok": 0,
       "let_underscore": 49,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/agent/utils.rs": {
+    "crates/abrasax-app-core/src/agent/utils.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/ambient/directives.rs": {
+    "crates/abrasax-app-core/src/ambient/directives.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/ambient/manager.rs": {
+    "crates/abrasax-app-core/src/ambient/manager.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/ambient/persistence.rs": {
+    "crates/abrasax-app-core/src/ambient/persistence.rs": {
       "dot_ok": 0,
       "let_underscore": 6,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/ambient/runner.rs": {
+    "crates/abrasax-app-core/src/ambient/runner.rs": {
       "dot_ok": 0,
       "let_underscore": 14,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/ambient/scheduler.rs": {
+    "crates/abrasax-app-core/src/ambient/scheduler.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/catchup.rs": {
+    "crates/abrasax-app-core/src/catchup.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/channel.rs": {
+    "crates/abrasax-app-core/src/channel.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/external_auth.rs": {
+    "crates/abrasax-app-core/src/external_auth.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/lib.rs": {
+    "crates/abrasax-app-core/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/network_retry.rs": {
+    "crates/abrasax-app-core/src/network_retry.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/notifications.rs": {
+    "crates/abrasax-app-core/src/notifications.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/overnight.rs": {
+    "crates/abrasax-app-core/src/overnight.rs": {
       "dot_ok": 12,
       "let_underscore": 10,
       "unwrap_or_default": 8
     },
-    "crates/jcode-app-core/src/perf.rs": {
+    "crates/abrasax-app-core/src/perf.rs": {
       "dot_ok": 9,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/replay.rs": {
+    "crates/abrasax-app-core/src/replay.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/restart_snapshot.rs": {
+    "crates/abrasax-app-core/src/restart_snapshot.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server.rs": {
+    "crates/abrasax-app-core/src/server.rs": {
       "dot_ok": 4,
       "let_underscore": 18,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/server/await_members_state.rs": {
+    "crates/abrasax-app-core/src/server/await_members_state.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/client_actions.rs": {
+    "crates/abrasax-app-core/src/server/client_actions.rs": {
       "dot_ok": 1,
       "let_underscore": 41,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/client_comm_channels.rs": {
+    "crates/abrasax-app-core/src/server/client_comm_channels.rs": {
       "dot_ok": 0,
       "let_underscore": 8,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/client_comm_context.rs": {
+    "crates/abrasax-app-core/src/server/client_comm_context.rs": {
       "dot_ok": 0,
       "let_underscore": 6,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/server/client_comm_message.rs": {
+    "crates/abrasax-app-core/src/server/client_comm_message.rs": {
       "dot_ok": 0,
       "let_underscore": 7,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/server/client_lifecycle.rs": {
+    "crates/abrasax-app-core/src/server/client_lifecycle.rs": {
       "dot_ok": 0,
       "let_underscore": 30,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/client_lifecycle_logging.rs": {
+    "crates/abrasax-app-core/src/server/client_lifecycle_logging.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/client_lightweight_control.rs": {
+    "crates/abrasax-app-core/src/server/client_lightweight_control.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/client_session.rs": {
+    "crates/abrasax-app-core/src/server/client_session.rs": {
       "dot_ok": 8,
       "let_underscore": 15,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/client_state.rs": {
+    "crates/abrasax-app-core/src/server/client_state.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/server/comm_await.rs": {
+    "crates/abrasax-app-core/src/server/comm_await.rs": {
       "dot_ok": 0,
       "let_underscore": 9,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/server/comm_control.rs": {
+    "crates/abrasax-app-core/src/server/comm_control.rs": {
       "dot_ok": 0,
       "let_underscore": 37,
       "unwrap_or_default": 4
     },
-    "crates/jcode-app-core/src/server/comm_graph.rs": {
+    "crates/abrasax-app-core/src/server/comm_graph.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/comm_plan.rs": {
+    "crates/abrasax-app-core/src/server/comm_plan.rs": {
       "dot_ok": 0,
       "let_underscore": 19,
       "unwrap_or_default": 4
     },
-    "crates/jcode-app-core/src/server/comm_session.rs": {
+    "crates/abrasax-app-core/src/server/comm_session.rs": {
       "dot_ok": 4,
       "let_underscore": 12,
       "unwrap_or_default": 9
     },
-    "crates/jcode-app-core/src/server/comm_sync.rs": {
+    "crates/abrasax-app-core/src/server/comm_sync.rs": {
       "dot_ok": 0,
       "let_underscore": 16,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/debug_ambient.rs": {
+    "crates/abrasax-app-core/src/server/debug_ambient.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/debug_command_exec.rs": {
+    "crates/abrasax-app-core/src/server/debug_command_exec.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/debug_events.rs": {
+    "crates/abrasax-app-core/src/server/debug_events.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/server/debug_server_state.rs": {
+    "crates/abrasax-app-core/src/server/debug_server_state.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/server/debug_swarm_read.rs": {
+    "crates/abrasax-app-core/src/server/debug_swarm_read.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/server/debug_swarm_write.rs": {
+    "crates/abrasax-app-core/src/server/debug_swarm_write.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/server/debug_testers.rs": {
+    "crates/abrasax-app-core/src/server/debug_testers.rs": {
       "dot_ok": 1,
       "let_underscore": 8,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/durable_state.rs": {
+    "crates/abrasax-app-core/src/server/durable_state.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/file_activity.rs": {
+    "crates/abrasax-app-core/src/server/file_activity.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/headless.rs": {
+    "crates/abrasax-app-core/src/server/headless.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/jade_relay.rs": {
+    "crates/abrasax-app-core/src/server/jade_relay.rs": {
       "dot_ok": 2,
       "let_underscore": 8,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/server/lifecycle.rs": {
+    "crates/abrasax-app-core/src/server/lifecycle.rs": {
       "dot_ok": 8,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/live_turn.rs": {
+    "crates/abrasax-app-core/src/server/live_turn.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/provider_control.rs": {
+    "crates/abrasax-app-core/src/server/provider_control.rs": {
       "dot_ok": 1,
       "let_underscore": 30,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/reload.rs": {
+    "crates/abrasax-app-core/src/server/reload.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/reload_recovery.rs": {
+    "crates/abrasax-app-core/src/server/reload_recovery.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/reload_state.rs": {
+    "crates/abrasax-app-core/src/server/reload_state.rs": {
       "dot_ok": 1,
       "let_underscore": 13,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server/socket.rs": {
+    "crates/abrasax-app-core/src/server/socket.rs": {
       "dot_ok": 1,
       "let_underscore": 7,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/state.rs": {
+    "crates/abrasax-app-core/src/server/state.rs": {
       "dot_ok": 2,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/swarm.rs": {
+    "crates/abrasax-app-core/src/server/swarm.rs": {
       "dot_ok": 8,
       "let_underscore": 6,
       "unwrap_or_default": 7
     },
-    "crates/jcode-app-core/src/server/swarm_channels.rs": {
+    "crates/abrasax-app-core/src/server/swarm_channels.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/swarm_mutation_state.rs": {
+    "crates/abrasax-app-core/src/server/swarm_mutation_state.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/swarm_persistence.rs": {
+    "crates/abrasax-app-core/src/server/swarm_persistence.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/server/util.rs": {
+    "crates/abrasax-app-core/src/server/util.rs": {
       "dot_ok": 13,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/server_spawn.rs": {
+    "crates/abrasax-app-core/src/server_spawn.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/session_active_pids.rs": {
+    "crates/abrasax-app-core/src/session_active_pids.rs": {
       "dot_ok": 6,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/session_effort.rs": {
+    "crates/abrasax-app-core/src/session_effort.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/session_launch.rs": {
+    "crates/abrasax-app-core/src/session_launch.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/ssh_remote.rs": {
+    "crates/abrasax-app-core/src/ssh_remote.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/startup_profile.rs": {
+    "crates/abrasax-app-core/src/startup_profile.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/telemetry_state.rs": {
+    "crates/abrasax-app-core/src/telemetry_state.rs": {
       "dot_ok": 18,
       "let_underscore": 7,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/agentgrep.rs": {
+    "crates/abrasax-app-core/src/tool/agentgrep.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/agentgrep/args.rs": {
+    "crates/abrasax-app-core/src/tool/agentgrep/args.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/agentgrep/context.rs": {
+    "crates/abrasax-app-core/src/tool/agentgrep/context.rs": {
       "dot_ok": 17,
       "let_underscore": 1,
       "unwrap_or_default": 4
     },
-    "crates/jcode-app-core/src/tool/ambient.rs": {
+    "crates/abrasax-app-core/src/tool/ambient.rs": {
       "dot_ok": 4,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/apply_patch.rs": {
+    "crates/abrasax-app-core/src/tool/apply_patch.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/bash.rs": {
+    "crates/abrasax-app-core/src/tool/bash.rs": {
       "dot_ok": 16,
       "let_underscore": 12,
       "unwrap_or_default": 4
     },
-    "crates/jcode-app-core/src/tool/bg.rs": {
+    "crates/abrasax-app-core/src/tool/bg.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/browser.rs": {
+    "crates/abrasax-app-core/src/tool/browser.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/tool/communicate.rs": {
+    "crates/abrasax-app-core/src/tool/communicate.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 8
     },
-    "crates/jcode-app-core/src/tool/communicate/transport.rs": {
+    "crates/abrasax-app-core/src/tool/communicate/transport.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/computer/osa.rs": {
+    "crates/abrasax-app-core/src/tool/computer/osa.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/computer/screen.rs": {
+    "crates/abrasax-app-core/src/tool/computer/screen.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/computer/setup.rs": {
+    "crates/abrasax-app-core/src/tool/computer/setup.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/computer/sys.rs": {
+    "crates/abrasax-app-core/src/tool/computer/sys.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/tool/computer/win.rs": {
+    "crates/abrasax-app-core/src/tool/computer/win.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/conversation_search.rs": {
+    "crates/abrasax-app-core/src/tool/conversation_search.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/discover.rs": {
+    "crates/abrasax-app-core/src/tool/discover.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-app-core/src/tool/gmail.rs": {
+    "crates/abrasax-app-core/src/tool/gmail.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 8
     },
-    "crates/jcode-app-core/src/tool/goal.rs": {
+    "crates/abrasax-app-core/src/tool/goal.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-app-core/src/tool/ls.rs": {
+    "crates/abrasax-app-core/src/tool/ls.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/mcp.rs": {
+    "crates/abrasax-app-core/src/tool/mcp.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/tool/mod.rs": {
+    "crates/abrasax-app-core/src/tool/mod.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/open.rs": {
+    "crates/abrasax-app-core/src/tool/open.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/patch.rs": {
+    "crates/abrasax-app-core/src/tool/patch.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/read.rs": {
+    "crates/abrasax-app-core/src/tool/read.rs": {
       "dot_ok": 1,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/selfdev/build_queue.rs": {
+    "crates/abrasax-app-core/src/tool/selfdev/build_queue.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/selfdev/mod.rs": {
+    "crates/abrasax-app-core/src/tool/selfdev/mod.rs": {
       "dot_ok": 8,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/selfdev/reload.rs": {
+    "crates/abrasax-app-core/src/tool/selfdev/reload.rs": {
       "dot_ok": 0,
       "let_underscore": 9,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/tool/selfdev/setup.rs": {
+    "crates/abrasax-app-core/src/tool/selfdev/setup.rs": {
       "dot_ok": 7,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/selfdev/status.rs": {
+    "crates/abrasax-app-core/src/tool/selfdev/status.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/session_search.rs": {
+    "crates/abrasax-app-core/src/tool/session_search.rs": {
       "dot_ok": 2,
       "let_underscore": 4,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/tool/session_search_index.rs": {
+    "crates/abrasax-app-core/src/tool/session_search_index.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-app-core/src/tool/todo.rs": {
+    "crates/abrasax-app-core/src/tool/todo.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 8
     },
-    "crates/jcode-app-core/src/tool/webfetch.rs": {
+    "crates/abrasax-app-core/src/tool/webfetch.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/tool/websearch.rs": {
+    "crates/abrasax-app-core/src/tool/websearch.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-app-core/src/tool/write.rs": {
+    "crates/abrasax-app-core/src/tool/write.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/turn_cancel_registry.rs": {
+    "crates/abrasax-app-core/src/turn_cancel_registry.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-app-core/src/update.rs": {
+    "crates/abrasax-app-core/src/update.rs": {
       "dot_ok": 2,
       "let_underscore": 6,
       "unwrap_or_default": 9
     },
-    "crates/jcode-app-core/src/update_metadata.rs": {
+    "crates/abrasax-app-core/src/update_metadata.rs": {
       "dot_ok": 1,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/update_rate_limit.rs": {
+    "crates/abrasax-app-core/src/update_rate_limit.rs": {
       "dot_ok": 3,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-app-core/src/usage_openai.rs": {
+    "crates/abrasax-app-core/src/usage_openai.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/account_store.rs": {
+    "crates/abrasax-base/src/auth/account_store.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/antigravity.rs": {
+    "crates/abrasax-base/src/auth/antigravity.rs": {
       "dot_ok": 8,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/claude.rs": {
+    "crates/abrasax-base/src/auth/claude.rs": {
       "dot_ok": 9,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/codex.rs": {
+    "crates/abrasax-base/src/auth/codex.rs": {
       "dot_ok": 6,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/copilot.rs": {
+    "crates/abrasax-base/src/auth/copilot.rs": {
       "dot_ok": 5,
       "let_underscore": 1,
       "unwrap_or_default": 8
     },
-    "crates/jcode-base/src/auth/cursor.rs": {
+    "crates/abrasax-base/src/auth/cursor.rs": {
       "dot_ok": 10,
       "let_underscore": 5,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/external.rs": {
+    "crates/abrasax-base/src/auth/external.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/auth/gemini.rs": {
+    "crates/abrasax-base/src/auth/gemini.rs": {
       "dot_ok": 4,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/google.rs": {
+    "crates/abrasax-base/src/auth/google.rs": {
       "dot_ok": 4,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/lifecycle.rs": {
+    "crates/abrasax-base/src/auth/lifecycle.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/auth/login_flows.rs": {
+    "crates/abrasax-base/src/auth/login_flows.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/mod.rs": {
+    "crates/abrasax-base/src/auth/mod.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-base/src/auth/oauth.rs": {
+    "crates/abrasax-base/src/auth/oauth.rs": {
       "dot_ok": 4,
       "let_underscore": 18,
       "unwrap_or_default": 3
     },
-    "crates/jcode-base/src/auth/refresh_state.rs": {
+    "crates/abrasax-base/src/auth/refresh_state.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/auth/test_sandbox.rs": {
+    "crates/abrasax-base/src/auth/test_sandbox.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/auth/validation.rs": {
+    "crates/abrasax-base/src/auth/validation.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/background.rs": {
+    "crates/abrasax-base/src/background.rs": {
       "dot_ok": 14,
       "let_underscore": 17,
       "unwrap_or_default": 9
     },
-    "crates/jcode-base/src/browser.rs": {
+    "crates/abrasax-base/src/browser.rs": {
       "dot_ok": 5,
       "let_underscore": 6,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/bus.rs": {
+    "crates/abrasax-base/src/bus.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/claude_live.rs": {
+    "crates/abrasax-base/src/claude_live.rs": {
       "dot_ok": 1,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/client_input.rs": {
+    "crates/abrasax-base/src/client_input.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/compaction.rs": {
+    "crates/abrasax-base/src/compaction.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/config.rs": {
+    "crates/abrasax-base/src/config.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/config/config_file.rs": {
+    "crates/abrasax-base/src/config/config_file.rs": {
       "dot_ok": 1,
       "let_underscore": 4,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/copilot_usage.rs": {
+    "crates/abrasax-base/src/copilot_usage.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/dictation.rs": {
+    "crates/abrasax-base/src/dictation.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/embedding.rs": {
+    "crates/abrasax-base/src/embedding.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/gateway.rs": {
+    "crates/abrasax-base/src/gateway.rs": {
       "dot_ok": 5,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/gateway/auth.rs": {
+    "crates/abrasax-base/src/gateway/auth.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/gateway/registry.rs": {
+    "crates/abrasax-base/src/gateway/registry.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/generated_image.rs": {
+    "crates/abrasax-base/src/generated_image.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/github.rs": {
+    "crates/abrasax-base/src/github.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/gmail.rs": {
+    "crates/abrasax-base/src/gmail.rs": {
       "dot_ok": 9,
       "let_underscore": 1,
       "unwrap_or_default": 4
     },
-    "crates/jcode-base/src/goal.rs": {
+    "crates/abrasax-base/src/goal.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/hooks.rs": {
+    "crates/abrasax-base/src/hooks.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/import.rs": {
+    "crates/abrasax-base/src/import.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 4
     },
-    "crates/jcode-base/src/login_qr.rs": {
+    "crates/abrasax-base/src/login_qr.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/mcp/client.rs": {
+    "crates/abrasax-base/src/mcp/client.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/mcp/protocol.rs": {
+    "crates/abrasax-base/src/mcp/protocol.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/mcp/schema_cache.rs": {
+    "crates/abrasax-base/src/mcp/schema_cache.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/memory.rs": {
+    "crates/abrasax-base/src/memory.rs": {
       "dot_ok": 1,
       "let_underscore": 7,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/memory/activity.rs": {
+    "crates/abrasax-base/src/memory/activity.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/memory/cache.rs": {
+    "crates/abrasax-base/src/memory/cache.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/memory/pending.rs": {
+    "crates/abrasax-base/src/memory/pending.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/memory_agent.rs": {
+    "crates/abrasax-base/src/memory_agent.rs": {
       "dot_ok": 0,
       "let_underscore": 6,
       "unwrap_or_default": 3
     },
-    "crates/jcode-base/src/memory_log.rs": {
+    "crates/abrasax-base/src/memory_log.rs": {
       "dot_ok": 2,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/memory_rerank.rs": {
+    "crates/abrasax-base/src/memory_rerank.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/message.rs": {
+    "crates/abrasax-base/src/message.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/message/notifications.rs": {
+    "crates/abrasax-base/src/message/notifications.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/model_pricing.rs": {
+    "crates/abrasax-base/src/model_pricing.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/platform.rs": {
+    "crates/abrasax-base/src/platform.rs": {
       "dot_ok": 1,
       "let_underscore": 7,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/process_memory.rs": {
+    "crates/abrasax-base/src/process_memory.rs": {
       "dot_ok": 30,
       "let_underscore": 6,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/process_title.rs": {
+    "crates/abrasax-base/src/process_title.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/prompt.rs": {
+    "crates/abrasax-base/src/prompt.rs": {
       "dot_ok": 10,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/account_failover.rs": {
+    "crates/abrasax-base/src/provider/account_failover.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/provider/antigravity.rs": {
+    "crates/abrasax-base/src/provider/antigravity.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/catalog_routes.rs": {
+    "crates/abrasax-base/src/provider/catalog_routes.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/provider/image_clamp.rs": {
+    "crates/abrasax-base/src/provider/image_clamp.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/jcode.rs": {
+    "crates/abrasax-base/src/provider/abrasax.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/mod.rs": {
+    "crates/abrasax-base/src/provider/mod.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 15
     },
-    "crates/jcode-base/src/provider/model_catalog_service.rs": {
+    "crates/abrasax-base/src/provider/model_catalog_service.rs": {
       "dot_ok": 6,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/models.rs": {
+    "crates/abrasax-base/src/provider/models.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-base/src/provider/openai.rs": {
+    "crates/abrasax-base/src/provider/openai.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/openrouter.rs": {
+    "crates/abrasax-base/src/provider/openrouter.rs": {
       "dot_ok": 6,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/pricing.rs": {
+    "crates/abrasax-base/src/provider/pricing.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/selection.rs": {
+    "crates/abrasax-base/src/provider/selection.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider/startup.rs": {
+    "crates/abrasax-base/src/provider/startup.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/provider_activity.rs": {
+    "crates/abrasax-base/src/provider_activity.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/provider_catalog.rs": {
+    "crates/abrasax-base/src/provider_catalog.rs": {
       "dot_ok": 7,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/registry.rs": {
+    "crates/abrasax-base/src/registry.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/runtime_memory_log.rs": {
+    "crates/abrasax-base/src/runtime_memory_log.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/safety.rs": {
+    "crates/abrasax-base/src/safety.rs": {
       "dot_ok": 4,
       "let_underscore": 7,
       "unwrap_or_default": 8
     },
-    "crates/jcode-base/src/secret_input.rs": {
+    "crates/abrasax-base/src/secret_input.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/session.rs": {
+    "crates/abrasax-base/src/session.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/session/crash.rs": {
+    "crates/abrasax-base/src/session/crash.rs": {
       "dot_ok": 2,
       "let_underscore": 6,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/session/load_telemetry.rs": {
+    "crates/abrasax-base/src/session/load_telemetry.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/session/maintenance.rs": {
+    "crates/abrasax-base/src/session/maintenance.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/session/persistence.rs": {
+    "crates/abrasax-base/src/session/persistence.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/session/storage_paths.rs": {
+    "crates/abrasax-base/src/session/storage_paths.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/session_metrics.rs": {
+    "crates/abrasax-base/src/session_metrics.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/side_panel.rs": {
+    "crates/abrasax-base/src/side_panel.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/sidecar.rs": {
+    "crates/abrasax-base/src/sidecar.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-base/src/skill.rs": {
+    "crates/abrasax-base/src/skill.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-base/src/soft_interrupt_store.rs": {
+    "crates/abrasax-base/src/soft_interrupt_store.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/sponsors/provenance.rs": {
+    "crates/abrasax-base/src/sponsors/provenance.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/subscription_api.rs": {
+    "crates/abrasax-base/src/subscription_api.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/subscription_catalog.rs": {
+    "crates/abrasax-base/src/subscription_catalog.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/telegram.rs": {
+    "crates/abrasax-base/src/telegram.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-base/src/todo.rs": {
+    "crates/abrasax-base/src/todo.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-base/src/transport/unix.rs": {
+    "crates/abrasax-base/src/transport/unix.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/transport/windows.rs": {
+    "crates/abrasax-base/src/transport/windows.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/usage.rs": {
+    "crates/abrasax-base/src/usage.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-base/src/usage/accessors.rs": {
+    "crates/abrasax-base/src/usage/accessors.rs": {
       "dot_ok": 2,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/usage/api_keys.rs": {
+    "crates/abrasax-base/src/usage/api_keys.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/usage/cache.rs": {
+    "crates/abrasax-base/src/usage/cache.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/usage/model.rs": {
+    "crates/abrasax-base/src/usage/model.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-base/src/usage/openai_helpers.rs": {
+    "crates/abrasax-base/src/usage/openai_helpers.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-base/src/usage/provider_fetch.rs": {
+    "crates/abrasax-base/src/usage/provider_fetch.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-build-meta/build.rs": {
+    "crates/abrasax-build-meta/build.rs": {
       "dot_ok": 12,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-build-meta/src/lib.rs": {
+    "crates/abrasax-build-meta/src/lib.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-build-support/src/lib.rs": {
+    "crates/abrasax-build-support/src/lib.rs": {
       "dot_ok": 2,
       "let_underscore": 5,
       "unwrap_or_default": 6
     },
-    "crates/jcode-build-support/src/paths.rs": {
+    "crates/abrasax-build-support/src/paths.rs": {
       "dot_ok": 18,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-build-support/src/platform_support.rs": {
+    "crates/abrasax-build-support/src/platform_support.rs": {
       "dot_ok": 0,
       "let_underscore": 7,
       "unwrap_or_default": 2
     },
-    "crates/jcode-build-support/src/source_state.rs": {
+    "crates/abrasax-build-support/src/source_state.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-build-support/src/storage_helpers.rs": {
+    "crates/abrasax-build-support/src/storage_helpers.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-config-types/src/lib.rs": {
+    "crates/abrasax-config-types/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-config-types/src/serde_lenient.rs": {
+    "crates/abrasax-config-types/src/serde_lenient.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-core/src/stdin_detect.rs": {
+    "crates/abrasax-core/src/stdin_detect.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-core/src/util.rs": {
+    "crates/abrasax-core/src/util.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/activity.rs": {
+    "crates/abrasax-desktop2/src/activity.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/app_harness.rs": {
+    "crates/abrasax-desktop2/src/app_harness.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/app_overview.rs": {
+    "crates/abrasax-desktop2/src/app_overview.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-desktop2/src/capture.rs": {
+    "crates/abrasax-desktop2/src/capture.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/cli.rs": {
+    "crates/abrasax-desktop2/src/cli.rs": {
       "dot_ok": 2,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/clipboard.rs": {
+    "crates/abrasax-desktop2/src/clipboard.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/editor.rs": {
+    "crates/abrasax-desktop2/src/editor.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/edits.rs": {
+    "crates/abrasax-desktop2/src/edits.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/harness.rs": {
+    "crates/abrasax-desktop2/src/harness.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-desktop2/src/main.rs": {
+    "crates/abrasax-desktop2/src/main.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/mem.rs": {
+    "crates/abrasax-desktop2/src/mem.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/meta.rs": {
+    "crates/abrasax-desktop2/src/meta.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/paint.rs": {
+    "crates/abrasax-desktop2/src/paint.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/place.rs": {
+    "crates/abrasax-desktop2/src/place.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-desktop2/src/reasoning.rs": {
+    "crates/abrasax-desktop2/src/reasoning.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/scene.rs": {
+    "crates/abrasax-desktop2/src/scene.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-desktop2/src/scroll_bench.rs": {
+    "crates/abrasax-desktop2/src/scroll_bench.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-embedding/src/lib.rs": {
+    "crates/abrasax-embedding/src/lib.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-fuzzy/src/lib.rs": {
+    "crates/abrasax-fuzzy/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-harness-api-server/src/background_progress.rs": {
+    "crates/abrasax-harness-api-server/src/background_progress.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-harness-api-server/src/lib.rs": {
+    "crates/abrasax-harness-api-server/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-harness-api-server/src/translate.rs": {
+    "crates/abrasax-harness-api-server/src/translate.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-harness-api/examples/harness_repl.rs": {
+    "crates/abrasax-harness-api/examples/harness_repl.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-harness-api/src/sockets.rs": {
+    "crates/abrasax-harness-api/src/sockets.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-import-core/src/lib.rs": {
+    "crates/abrasax-import-core/src/lib.rs": {
       "dot_ok": 10,
       "let_underscore": 0,
       "unwrap_or_default": 16
     },
-    "crates/jcode-import-core/src/repo_ranking.rs": {
+    "crates/abrasax-import-core/src/repo_ranking.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-logging/src/lib.rs": {
+    "crates/abrasax-logging/src/lib.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-logging/src/watchdog.rs": {
+    "crates/abrasax-logging/src/watchdog.rs": {
       "dot_ok": 5,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-memory-types/src/graph.rs": {
+    "crates/abrasax-memory-types/src/graph.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-message-types/src/lib.rs": {
+    "crates/abrasax-message-types/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-notify-email/src/lib.rs": {
+    "crates/abrasax-notify-email/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-overnight-core/src/lib.rs": {
+    "crates/abrasax-overnight-core/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-plan/src/bridge.rs": {
+    "crates/abrasax-plan/src/bridge.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-plan/src/dag/mod.rs": {
+    "crates/abrasax-plan/src/dag/mod.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-plan/src/dag/ops.rs": {
+    "crates/abrasax-plan/src/dag/ops.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-productivity-core/src/aggregate.rs": {
+    "crates/abrasax-productivity-core/src/aggregate.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-productivity-core/src/scan.rs": {
+    "crates/abrasax-productivity-core/src/scan.rs": {
       "dot_ok": 5,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-protocol/src/comm_format.rs": {
+    "crates/abrasax-protocol/src/comm_format.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-protocol/src/lib.rs": {
+    "crates/abrasax-protocol/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-anthropic-runtime/src/lib.rs": {
+    "crates/abrasax-provider-anthropic-runtime/src/lib.rs": {
       "dot_ok": 4,
       "let_underscore": 14,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-anthropic/src/lib.rs": {
+    "crates/abrasax-provider-anthropic/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-antigravity-runtime/src/lib.rs": {
+    "crates/abrasax-provider-antigravity-runtime/src/lib.rs": {
       "dot_ok": 2,
       "let_underscore": 18,
       "unwrap_or_default": 3
     },
-    "crates/jcode-provider-antigravity/src/lib.rs": {
+    "crates/abrasax-provider-antigravity/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-bedrock/src/lib.rs": {
+    "crates/abrasax-provider-bedrock/src/lib.rs": {
       "dot_ok": 18,
       "let_underscore": 9,
       "unwrap_or_default": 5
     },
-    "crates/jcode-provider-claude-cli-runtime/src/lib.rs": {
+    "crates/abrasax-provider-claude-cli-runtime/src/lib.rs": {
       "dot_ok": 8,
       "let_underscore": 5,
       "unwrap_or_default": 5
     },
-    "crates/jcode-provider-copilot-runtime/src/lib.rs": {
+    "crates/abrasax-provider-copilot-runtime/src/lib.rs": {
       "dot_ok": 5,
       "let_underscore": 20,
       "unwrap_or_default": 2
     },
-    "crates/jcode-provider-core/src/attempt_tracker.rs": {
+    "crates/abrasax-provider-core/src/attempt_tracker.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-core/src/auth_mode.rs": {
+    "crates/abrasax-provider-core/src/auth_mode.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-core/src/failover.rs": {
+    "crates/abrasax-provider-core/src/failover.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-core/src/fingerprint.rs": {
+    "crates/abrasax-provider-core/src/fingerprint.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-provider-core/src/models.rs": {
+    "crates/abrasax-provider-core/src/models.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-core/src/openai_schema.rs": {
+    "crates/abrasax-provider-core/src/openai_schema.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-core/src/pricing.rs": {
+    "crates/abrasax-provider-core/src/pricing.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-core/src/reasoning.rs": {
+    "crates/abrasax-provider-core/src/reasoning.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-provider-core/src/retry_after.rs": {
+    "crates/abrasax-provider-core/src/retry_after.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-cursor-runtime/src/agent_transport.rs": {
+    "crates/abrasax-provider-cursor-runtime/src/agent_transport.rs": {
       "dot_ok": 3,
       "let_underscore": 9,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-cursor-runtime/src/lib.rs": {
+    "crates/abrasax-provider-cursor-runtime/src/lib.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-doctor/src/lifecycle_driver.rs": {
+    "crates/abrasax-provider-doctor/src/lifecycle_driver.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-doctor/src/live_provider_probes.rs": {
+    "crates/abrasax-provider-doctor/src/live_provider_probes.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 7
     },
-    "crates/jcode-provider-doctor/src/provider_e2e.rs": {
+    "crates/abrasax-provider-doctor/src/provider_e2e.rs": {
       "dot_ok": 1,
       "let_underscore": 2,
       "unwrap_or_default": 2
     },
-    "crates/jcode-provider-env/src/lib.rs": {
+    "crates/abrasax-provider-env/src/lib.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-gemini-runtime/src/lib.rs": {
+    "crates/abrasax-provider-gemini-runtime/src/lib.rs": {
       "dot_ok": 4,
       "let_underscore": 23,
       "unwrap_or_default": 6
     },
-    "crates/jcode-provider-gemini/src/lib.rs": {
+    "crates/abrasax-provider-gemini/src/lib.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-metadata/src/lib.rs": {
+    "crates/abrasax-provider-metadata/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-openai-runtime/src/chatgpt_web.rs": {
+    "crates/abrasax-provider-openai-runtime/src/chatgpt_web.rs": {
       "dot_ok": 8,
       "let_underscore": 5,
       "unwrap_or_default": 8
     },
-    "crates/jcode-provider-openai-runtime/src/lib.rs": {
+    "crates/abrasax-provider-openai-runtime/src/lib.rs": {
       "dot_ok": 3,
       "let_underscore": 2,
       "unwrap_or_default": 2
     },
-    "crates/jcode-provider-openai-runtime/src/openai_provider_impl.rs": {
+    "crates/abrasax-provider-openai-runtime/src/openai_provider_impl.rs": {
       "dot_ok": 1,
       "let_underscore": 6,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-openai-runtime/src/openai_rate_limit_format.rs": {
+    "crates/abrasax-provider-openai-runtime/src/openai_rate_limit_format.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-openai-runtime/src/openai_stream_runtime.rs": {
+    "crates/abrasax-provider-openai-runtime/src/openai_stream_runtime.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-openai/src/request.rs": {
+    "crates/abrasax-provider-openai/src/request.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-provider-openai/src/stream.rs": {
+    "crates/abrasax-provider-openai/src/stream.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 6
     },
-    "crates/jcode-provider-openrouter-runtime/src/lib.rs": {
+    "crates/abrasax-provider-openrouter-runtime/src/lib.rs": {
       "dot_ok": 23,
       "let_underscore": 0,
       "unwrap_or_default": 9
     },
-    "crates/jcode-provider-openrouter-runtime/src/openrouter_provider_impl.rs": {
+    "crates/abrasax-provider-openrouter-runtime/src/openrouter_provider_impl.rs": {
       "dot_ok": 2,
       "let_underscore": 3,
       "unwrap_or_default": 3
     },
-    "crates/jcode-provider-openrouter-runtime/src/openrouter_sse_stream.rs": {
+    "crates/abrasax-provider-openrouter-runtime/src/openrouter_sse_stream.rs": {
       "dot_ok": 1,
       "let_underscore": 7,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-openrouter/src/lib.rs": {
+    "crates/abrasax-provider-openrouter/src/lib.rs": {
       "dot_ok": 14,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-provider-openrouter/src/request.rs": {
+    "crates/abrasax-provider-openrouter/src/request.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-render-core/src/math.rs": {
+    "crates/abrasax-render-core/src/math.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-render-core/src/preprocess.rs": {
+    "crates/abrasax-render-core/src/preprocess.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-session-types/src/lib.rs": {
+    "crates/abrasax-session-types/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-setup-hints/src/cli_launch_hints.rs": {
+    "crates/abrasax-setup-hints/src/cli_launch_hints.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 1
     },
-    "crates/jcode-setup-hints/src/keymap/external.rs": {
+    "crates/abrasax-setup-hints/src/keymap/external.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-setup-hints/src/keymap/macos_hotkeys.rs": {
+    "crates/abrasax-setup-hints/src/keymap/macos_hotkeys.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-setup-hints/src/keymap/mod.rs": {
+    "crates/abrasax-setup-hints/src/keymap/mod.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-setup-hints/src/launch_hotkeys.rs": {
+    "crates/abrasax-setup-hints/src/launch_hotkeys.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-setup-hints/src/lib.rs": {
+    "crates/abrasax-setup-hints/src/lib.rs": {
       "dot_ok": 6,
       "let_underscore": 21,
       "unwrap_or_default": 14
     },
-    "crates/jcode-setup-hints/src/macos_launcher.rs": {
+    "crates/abrasax-setup-hints/src/macos_launcher.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-setup-hints/src/macos_terminal.rs": {
+    "crates/abrasax-setup-hints/src/macos_terminal.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-setup-hints/src/windows_setup.rs": {
+    "crates/abrasax-setup-hints/src/windows_setup.rs": {
       "dot_ok": 2,
       "let_underscore": 11,
       "unwrap_or_default": 4
     },
-    "crates/jcode-storage/src/active_pids.rs": {
+    "crates/abrasax-storage/src/active_pids.rs": {
       "dot_ok": 15,
       "let_underscore": 9,
       "unwrap_or_default": 0
     },
-    "crates/jcode-storage/src/lib.rs": {
+    "crates/abrasax-storage/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 13,
       "unwrap_or_default": 1
     },
-    "crates/jcode-swarm-core/src/lib.rs": {
+    "crates/abrasax-swarm-core/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-telemetry-core/src/lib.rs": {
+    "crates/abrasax-telemetry-core/src/lib.rs": {
       "dot_ok": 7,
       "let_underscore": 10,
       "unwrap_or_default": 3
     },
-    "crates/jcode-telemetry-core/src/lifecycle.rs": {
+    "crates/abrasax-telemetry-core/src/lifecycle.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-telemetry-core/src/state_support.rs": {
+    "crates/abrasax-telemetry-core/src/state_support.rs": {
       "dot_ok": 22,
       "let_underscore": 8,
       "unwrap_or_default": 0
     },
-    "crates/jcode-terminal-image/src/display.rs": {
+    "crates/abrasax-terminal-image/src/display.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-terminal-launch/src/lib.rs": {
+    "crates/abrasax-terminal-launch/src/lib.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-core/src/keybind.rs": {
+    "crates/abrasax-tui-core/src/keybind.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/lib.rs": {
+    "crates/abrasax-tui-markdown/src/lib.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui-markdown/src/markdown_context.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_context.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/markdown_latex_image.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_latex_image.rs": {
       "dot_ok": 4,
       "let_underscore": 5,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/markdown_mermaid_fallback.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_mermaid_fallback.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/markdown_render_full.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_render_full.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/markdown_render_lazy.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_render_lazy.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-markdown/src/markdown_render_support.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_render_support.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui-markdown/src/markdown_wrap.rs": {
+    "crates/abrasax-tui-markdown/src/markdown_wrap.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui-mermaid/src/debug.rs": {
+    "crates/abrasax-tui-mermaid/src/debug.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-mermaid/src/lib.rs": {
+    "crates/abrasax-tui-mermaid/src/lib.rs": {
       "dot_ok": 2,
       "let_underscore": 4,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui-mermaid/src/mermaid_active.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_active.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui-mermaid/src/mermaid_cache_render.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_cache_render.rs": {
       "dot_ok": 9,
       "let_underscore": 4,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui-mermaid/src/mermaid_content.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_content.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-mermaid/src/mermaid_debug.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_debug.rs": {
       "dot_ok": 1,
       "let_underscore": 6,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-mermaid/src/mermaid_inline.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_inline.rs": {
       "dot_ok": 9,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-mermaid/src/mermaid_runtime.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_runtime.rs": {
       "dot_ok": 21,
       "let_underscore": 2,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui-mermaid/src/mermaid_svg.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_svg.rs": {
       "dot_ok": 19,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-mermaid/src/mermaid_viewport.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_viewport.rs": {
       "dot_ok": 8,
       "let_underscore": 3,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui-mermaid/src/mermaid_widget.rs": {
+    "crates/abrasax-tui-mermaid/src/mermaid_widget.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-permissions/src/lib.rs": {
+    "crates/abrasax-tui-permissions/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui-render/src/layout.rs": {
+    "crates/abrasax-tui-render/src/layout.rs": {
       "dot_ok": 4,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-render/src/swarm_gallery.rs": {
+    "crates/abrasax-tui-render/src/swarm_gallery.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui-style/src/palette.rs": {
+    "crates/abrasax-tui-style/src/palette.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui-usage-overlay/src/lib.rs": {
+    "crates/abrasax-tui-usage-overlay/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui-visual-debug/src/lib.rs": {
+    "crates/abrasax-tui-visual-debug/src/lib.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui-workspace/src/workspace_map.rs": {
+    "crates/abrasax-tui-workspace/src/workspace_map.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app.rs": {
+    "crates/abrasax-tui/src/tui/app.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/auth.rs": {
+    "crates/abrasax-tui/src/tui/app/auth.rs": {
       "dot_ok": 7,
       "let_underscore": 3,
       "unwrap_or_default": 12
     },
-    "crates/jcode-tui/src/tui/app/auth_account_commands.rs": {
+    "crates/abrasax-tui/src/tui/app/auth_account_commands.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/app/auth_account_picker.rs": {
+    "crates/abrasax-tui/src/tui/app/auth_account_picker.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 9
     },
-    "crates/jcode-tui/src/tui/app/auth_account_picker_saved_accounts.rs": {
+    "crates/abrasax-tui/src/tui/app/auth_account_picker_saved_accounts.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/app/catchup.rs": {
+    "crates/abrasax-tui/src/tui/app/catchup.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/commands.rs": {
+    "crates/abrasax-tui/src/tui/app/commands.rs": {
       "dot_ok": 4,
       "let_underscore": 9,
       "unwrap_or_default": 20
     },
-    "crates/jcode-tui/src/tui/app/commands_improve.rs": {
+    "crates/abrasax-tui/src/tui/app/commands_improve.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 8
     },
-    "crates/jcode-tui/src/tui/app/commands_overnight.rs": {
+    "crates/abrasax-tui/src/tui/app/commands_overnight.rs": {
       "dot_ok": 5,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/commands_review.rs": {
+    "crates/abrasax-tui/src/tui/app/commands_review.rs": {
       "dot_ok": 5,
       "let_underscore": 6,
       "unwrap_or_default": 6
     },
-    "crates/jcode-tui/src/tui/app/conversation_state.rs": {
+    "crates/abrasax-tui/src/tui/app/conversation_state.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/copy_selection.rs": {
+    "crates/abrasax-tui/src/tui/app/copy_selection.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/debug.rs": {
+    "crates/abrasax-tui/src/tui/app/debug.rs": {
       "dot_ok": 0,
       "let_underscore": 2,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/debug_bench.rs": {
+    "crates/abrasax-tui/src/tui/app/debug_bench.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/debug_cmds.rs": {
+    "crates/abrasax-tui/src/tui/app/debug_cmds.rs": {
       "dot_ok": 10,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/debug_profile.rs": {
+    "crates/abrasax-tui/src/tui/app/debug_profile.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/debug_script.rs": {
+    "crates/abrasax-tui/src/tui/app/debug_script.rs": {
       "dot_ok": 1,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/dictation.rs": {
+    "crates/abrasax-tui/src/tui/app/dictation.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/handterm_native_scroll.rs": {
+    "crates/abrasax-tui/src/tui/app/handterm_native_scroll.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/helpers.rs": {
+    "crates/abrasax-tui/src/tui/app/helpers.rs": {
       "dot_ok": 13,
       "let_underscore": 2,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/app/helpers/clipboard_helper.rs": {
+    "crates/abrasax-tui/src/tui/app/helpers/clipboard_helper.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/hotkey_feedback.rs": {
+    "crates/abrasax-tui/src/tui/app/hotkey_feedback.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/inline_interactive.rs": {
+    "crates/abrasax-tui/src/tui/app/inline_interactive.rs": {
       "dot_ok": 6,
       "let_underscore": 11,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/app/inline_interactive/helpers.rs": {
+    "crates/abrasax-tui/src/tui/app/inline_interactive/helpers.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/inline_interactive/preview.rs": {
+    "crates/abrasax-tui/src/tui/app/inline_interactive/preview.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/input.rs": {
+    "crates/abrasax-tui/src/tui/app/input.rs": {
       "dot_ok": 8,
       "let_underscore": 3,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/app/local.rs": {
+    "crates/abrasax-tui/src/tui/app/local.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/model_context.rs": {
+    "crates/abrasax-tui/src/tui/app/model_context.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 6
     },
-    "crates/jcode-tui/src/tui/app/navigation.rs": {
+    "crates/abrasax-tui/src/tui/app/navigation.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/onboarding_flow.rs": {
+    "crates/abrasax-tui/src/tui/app/onboarding_flow.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/onboarding_flow_control.rs": {
+    "crates/abrasax-tui/src/tui/app/onboarding_flow_control.rs": {
       "dot_ok": 1,
       "let_underscore": 3,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/onboarding_repair.rs": {
+    "crates/abrasax-tui/src/tui/app/onboarding_repair.rs": {
       "dot_ok": 5,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/prompt_history.rs": {
+    "crates/abrasax-tui/src/tui/app/prompt_history.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/remote.rs": {
+    "crates/abrasax-tui/src/tui/app/remote.rs": {
       "dot_ok": 0,
       "let_underscore": 11,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/remote/input_dispatch.rs": {
+    "crates/abrasax-tui/src/tui/app/remote/input_dispatch.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/remote/key_handling.rs": {
+    "crates/abrasax-tui/src/tui/app/remote/key_handling.rs": {
       "dot_ok": 0,
       "let_underscore": 19,
       "unwrap_or_default": 10
     },
-    "crates/jcode-tui/src/tui/app/remote/reconnect.rs": {
+    "crates/abrasax-tui/src/tui/app/remote/reconnect.rs": {
       "dot_ok": 4,
       "let_underscore": 5,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/app/remote/server_events.rs": {
+    "crates/abrasax-tui/src/tui/app/remote/server_events.rs": {
       "dot_ok": 8,
       "let_underscore": 1,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/app/remote/session_persistence.rs": {
+    "crates/abrasax-tui/src/tui/app/remote/session_persistence.rs": {
       "dot_ok": 0,
       "let_underscore": 3,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/run_shell.rs": {
+    "crates/abrasax-tui/src/tui/app/run_shell.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/runtime_memory.rs": {
+    "crates/abrasax-tui/src/tui/app/runtime_memory.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/shortcut_hints.rs": {
+    "crates/abrasax-tui/src/tui/app/shortcut_hints.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/split_view.rs": {
+    "crates/abrasax-tui/src/tui/app/split_view.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/state_ui.rs": {
+    "crates/abrasax-tui/src/tui/app/state_ui.rs": {
       "dot_ok": 4,
       "let_underscore": 9,
       "unwrap_or_default": 11
     },
-    "crates/jcode-tui/src/tui/app/state_ui_input_helpers.rs": {
+    "crates/abrasax-tui/src/tui/app/state_ui_input_helpers.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-tui/src/tui/app/state_ui_maintenance.rs": {
+    "crates/abrasax-tui/src/tui/app/state_ui_maintenance.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/state_ui_messages.rs": {
+    "crates/abrasax-tui/src/tui/app/state_ui_messages.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/subscribe_nudge.rs": {
+    "crates/abrasax-tui/src/tui/app/subscribe_nudge.rs": {
       "dot_ok": 3,
       "let_underscore": 1,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/support.rs": {
+    "crates/abrasax-tui/src/tui/app/support.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/swarm_hint.rs": {
+    "crates/abrasax-tui/src/tui/app/swarm_hint.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/terminal_liveness.rs": {
+    "crates/abrasax-tui/src/tui/app/terminal_liveness.rs": {
       "dot_ok": 2,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/terminal_setup_command.rs": {
+    "crates/abrasax-tui/src/tui/app/terminal_setup_command.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/app/todos_view.rs": {
+    "crates/abrasax-tui/src/tui/app/todos_view.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 5
     },
-    "crates/jcode-tui/src/tui/app/tui_lifecycle.rs": {
+    "crates/abrasax-tui/src/tui/app/tui_lifecycle.rs": {
       "dot_ok": 9,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/app/tui_lifecycle_runtime.rs": {
+    "crates/abrasax-tui/src/tui/app/tui_lifecycle_runtime.rs": {
       "dot_ok": 5,
       "let_underscore": 6,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/app/tui_state.rs": {
+    "crates/abrasax-tui/src/tui/app/tui_state.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 6
     },
-    "crates/jcode-tui/src/tui/app/turn.rs": {
+    "crates/abrasax-tui/src/tui/app/turn.rs": {
       "dot_ok": 0,
       "let_underscore": 14,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/turn_memory.rs": {
+    "crates/abrasax-tui/src/tui/app/turn_memory.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/turn_notify.rs": {
+    "crates/abrasax-tui/src/tui/app/turn_notify.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/app/ui_prefs.rs": {
+    "crates/abrasax-tui/src/tui/app/ui_prefs.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/info_widget.rs": {
+    "crates/abrasax-tui/src/tui/info_widget.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/info_widget_swarm_background.rs": {
+    "crates/abrasax-tui/src/tui/info_widget_swarm_background.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/info_widget_timeline.rs": {
+    "crates/abrasax-tui/src/tui/info_widget_timeline.rs": {
       "dot_ok": 2,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/login_picker.rs": {
+    "crates/abrasax-tui/src/tui/login_picker.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/memory_profile.rs": {
+    "crates/abrasax-tui/src/tui/memory_profile.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/mod.rs": {
+    "crates/abrasax-tui/src/tui/mod.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/redraw_schedule.rs": {
+    "crates/abrasax-tui/src/tui/redraw_schedule.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/remote_diff.rs": {
+    "crates/abrasax-tui/src/tui/remote_diff.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/screenshot.rs": {
+    "crates/abrasax-tui/src/tui/screenshot.rs": {
       "dot_ok": 0,
       "let_underscore": 4,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/session_picker.rs": {
+    "crates/abrasax-tui/src/tui/session_picker.rs": {
       "dot_ok": 1,
       "let_underscore": 5,
       "unwrap_or_default": 6
     },
-    "crates/jcode-tui/src/tui/session_picker/filter.rs": {
+    "crates/abrasax-tui/src/tui/session_picker/filter.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 4
     },
-    "crates/jcode-tui/src/tui/session_picker/loading.rs": {
+    "crates/abrasax-tui/src/tui/session_picker/loading.rs": {
       "dot_ok": 33,
       "let_underscore": 1,
       "unwrap_or_default": 21
     },
-    "crates/jcode-tui/src/tui/session_picker/render.rs": {
+    "crates/abrasax-tui/src/tui/session_picker/render.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/terminal_setup.rs": {
+    "crates/abrasax-tui/src/tui/terminal_setup.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/test_harness.rs": {
+    "crates/abrasax-tui/src/tui/test_harness.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/theme_detect.rs": {
+    "crates/abrasax-tui/src/tui/theme_detect.rs": {
       "dot_ok": 7,
       "let_underscore": 2,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/ui.rs": {
+    "crates/abrasax-tui/src/tui/ui.rs": {
       "dot_ok": 4,
       "let_underscore": 1,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/ui/url.rs": {
+    "crates/abrasax-tui/src/tui/ui/url.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_changelog.rs": {
+    "crates/abrasax-tui/src/tui/ui_changelog.rs": {
       "dot_ok": 3,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_diagram_pane.rs": {
+    "crates/abrasax-tui/src/tui/ui_diagram_pane.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_file_diff.rs": {
+    "crates/abrasax-tui/src/tui/ui_file_diff.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_frame_metrics.rs": {
+    "crates/abrasax-tui/src/tui/ui_frame_metrics.rs": {
       "dot_ok": 11,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_header.rs": {
+    "crates/abrasax-tui/src/tui/ui_header.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 3
     },
-    "crates/jcode-tui/src/tui/ui_inline_image.rs": {
+    "crates/abrasax-tui/src/tui/ui_inline_image.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_inline_interactive.rs": {
+    "crates/abrasax-tui/src/tui/ui_inline_interactive.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_input.rs": {
+    "crates/abrasax-tui/src/tui/ui_input.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 2
     },
-    "crates/jcode-tui/src/tui/ui_messages.rs": {
+    "crates/abrasax-tui/src/tui/ui_messages.rs": {
       "dot_ok": 5,
       "let_underscore": 0,
       "unwrap_or_default": 9
     },
-    "crates/jcode-tui/src/tui/ui_onboarding.rs": {
+    "crates/abrasax-tui/src/tui/ui_onboarding.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_overlays.rs": {
+    "crates/abrasax-tui/src/tui/ui_overlays.rs": {
       "dot_ok": 0,
       "let_underscore": 0,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/tui/ui_pinned.rs": {
+    "crates/abrasax-tui/src/tui/ui_pinned.rs": {
       "dot_ok": 1,
       "let_underscore": 1,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_status.rs": {
+    "crates/abrasax-tui/src/tui/ui_status.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_todo_changes.rs": {
+    "crates/abrasax-tui/src/tui/ui_todo_changes.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_tools.rs": {
+    "crates/abrasax-tui/src/tui/ui_tools.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 12
     },
-    "crates/jcode-tui/src/tui/ui_tools/batch.rs": {
+    "crates/abrasax-tui/src/tui/ui_tools/batch.rs": {
       "dot_ok": 1,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/ui_viewport.rs": {
+    "crates/abrasax-tui/src/tui/ui_viewport.rs": {
       "dot_ok": 2,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-tui/src/tui/workspace_client.rs": {
+    "crates/abrasax-tui/src/tui/workspace_client.rs": {
       "dot_ok": 0,
       "let_underscore": 5,
       "unwrap_or_default": 1
     },
-    "crates/jcode-tui/src/video_export.rs": {
+    "crates/abrasax-tui/src/video_export.rs": {
       "dot_ok": 4,
       "let_underscore": 2,
       "unwrap_or_default": 1
     },
-    "crates/jcode-update-core/src/lib.rs": {
+    "crates/abrasax-update-core/src/lib.rs": {
       "dot_ok": 3,
       "let_underscore": 0,
       "unwrap_or_default": 0
     },
-    "crates/jcode-usage-types/src/lib.rs": {
+    "crates/abrasax-usage-types/src/lib.rs": {
       "dot_ok": 0,
       "let_underscore": 1,
       "unwrap_or_default": 0

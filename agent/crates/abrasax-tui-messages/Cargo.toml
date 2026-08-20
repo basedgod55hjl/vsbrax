@@ -1,0 +1,13 @@
+[package]
+name = "abrasax-tui-messages"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+abrasax-config-types = { path = "../abrasax-config-types" }
+abrasax-message-types = { path = "../abrasax-message-types" }
+abrasax-session-types = { path = "../abrasax-session-types" }
+abrasax-tui-markdown = { path = "../abrasax-tui-markdown" }
+ratatui = "0.30"
+serde_json = "1"

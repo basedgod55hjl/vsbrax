@@ -96,7 +96,7 @@ interface Pending {
  * without one is a stream event and is emitted on `event` plus a per-kind
  * channel (`client.on("text_delta", ...)`).
  */
-export class JcodeClient extends EventEmitter {
+export class AbrasaxClient extends EventEmitter {
   private readonly transport: Transport;
   private readonly decoder = new NdjsonDecoder();
   private readonly pending = new Map<number, Pending>();
@@ -105,7 +105,7 @@ export class JcodeClient extends EventEmitter {
   private closed = false;
   private closeError?: Error;
 
-  /** Server identity from the handshake, e.g. "jcode-harness-api-bridge/0.1.0". */
+  /** Server identity from the handshake, e.g. "abrasax-harness-api-bridge/0.1.0". */
   server = "";
   /** Capability strings advertised by the server. */
   capabilities: string[] = [];
@@ -120,15 +120,15 @@ export class JcodeClient extends EventEmitter {
   }
 
   /** Dial the harness and complete the version handshake. */
-  static async connect(options: ConnectOptions = {}): Promise<JcodeClient> {
+  static async connect(options: ConnectOptions = {}): Promise<AbrasaxClient> {
     const transport =
       options.transport ?? (await unixSocketTransport(options.socketPath ?? apiSocketPath()));
-    const client = new JcodeClient(transport, options.requestTimeoutMs ?? 30_000);
+    const client = new AbrasaxClient(transport, options.requestTimeoutMs ?? 30_000);
     const frame = await client.request({
       req: "hello",
       min_version: API_VERSION_MAJOR,
       max_version: API_VERSION_MAJOR,
-      client: options.clientName ?? "jcode-sdk-ts",
+      client: options.clientName ?? "abrasax-sdk-ts",
     });
     if (frame.ev !== "hello_ok") {
       client.close();

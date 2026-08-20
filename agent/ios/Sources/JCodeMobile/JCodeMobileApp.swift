@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct JCodeMobileApp: App {
+struct AbrasaxMobileApp: App {
     @State private var model = AppModel()
     @Environment(\.scenePhase) private var scenePhase
 

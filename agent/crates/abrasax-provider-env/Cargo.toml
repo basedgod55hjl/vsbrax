@@ -1,0 +1,18 @@
+[package]
+name = "abrasax-provider-env"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "abrasax_provider_env"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+abrasax-core = { path = "../abrasax-core" }
+abrasax-logging = { path = "../abrasax-logging" }
+abrasax-provider-metadata = { path = "../abrasax-provider-metadata" }
+abrasax-storage = { path = "../abrasax-storage" }
+
+[dev-dependencies]
+tempfile = "3"

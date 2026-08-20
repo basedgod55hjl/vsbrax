@@ -1,0 +1,152 @@
+[package]
+name = "abrasax-base"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# Foundational layer of the abrasax application core: the downward-closed set of
+# modules (provider, auth, config, session, message, memory, telemetry, ...)
+# that the server/tool/agent layer depends on. Split out of `abrasax-app-core` so
+# the two halves compile as separate rustc units, halving peak compile memory.
+# `abrasax-app-core` re-exports this crate (`pub use abrasax_base::*`) so that every
+# existing `crate::<module>` path keeps resolving unchanged.
+
+[lib]
+name = "abrasax_base"
+path = "src/lib.rs"
+
+[dependencies]
+# Memory allocator (reduces fragmentation for long-running server)
+tikv-jemalloc-ctl = { version = "0.6", optional = true }
+tikv-jemalloc-sys = { version = "0.6", optional = true }
+
+# Async runtime
+tokio = { version = "1", features = ["fs", "io-std", "io-util", "macros", "net", "process", "rt-multi-thread", "signal", "sync", "time"] }
+futures = "0.3"
+async-trait = "0.1"
+
+# HTTP client
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "blocking", "charset", "http2", "system-proxy", "rustls-tls", "rustls-tls-native-roots"] }
+tokio-tungstenite = { version = "0.24", default-features = false, features = ["connect", "rustls-tls-native-roots"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value"] }
+serde_yaml = "0.9"
+toml = "0.8"
+
+# File operations
+
+# Utilities
+dirs = "5"               # home directory
+anyhow = "1"
+libc = "0.2"             # Unix system calls (flock)
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1"
+urlencoding = "2"        # URL encoding for web search
+uuid = { version = "1", features = ["v4", "v5"] }
+proctitle = "0.1"
+
+# Embeddings (local inference) - behind feature flag (163 crates, slow to compile)
+abrasax-embedding = { path = "../abrasax-embedding", optional = true }
+abrasax-gateway-types = { path = "../abrasax-gateway-types" }
+abrasax-import-core = { path = "../abrasax-import-core" }
+abrasax-logging = { path = "../abrasax-logging" }
+
+# OAuth
+base64 = "0.22"
+sha2 = "0.10"
+rand = "0.9.3"
+hex = "0.4"
+url = "2"
+open = "5"               # Open URLs in browser
+abrasax-auth-types = { path = "../abrasax-auth-types" }
+abrasax-azure-auth = { path = "../abrasax-azure-auth" }
+abrasax-agent-runtime = { path = "../abrasax-agent-runtime" }
+abrasax-provider-metadata = { path = "../abrasax-provider-metadata" }
+abrasax-provider-env = { path = "../abrasax-provider-env" }
+abrasax-provider-core = { path = "../abrasax-provider-core" }
+# default-features=false so this crate's `bedrock` feature (below) controls the
+# AWS SDK stack; the pure model-metadata/credential-detection layer is always on.
+abrasax-provider-bedrock = { path = "../abrasax-provider-bedrock", default-features = false }
+abrasax-provider-antigravity = { path = "../abrasax-provider-antigravity" }
+abrasax-provider-copilot = { path = "../abrasax-provider-copilot" }
+abrasax-provider-openai = { path = "../abrasax-provider-openai" }
+abrasax-provider-openrouter = { path = "../abrasax-provider-openrouter" }
+abrasax-provider-gemini = { path = "../abrasax-provider-gemini" }
+# NOTE: this foundation layer intentionally does NOT depend on any `abrasax-tui-*`
+# crate. The two pure-data/string symbols it used to reach for (`ResumeTarget`,
+# `reasoning_line_markup`) were moved to `abrasax-session-types` and
+# `abrasax-render-core` respectively, so the layering inversion (foundation
+# depending on presentation) is gone.
+abrasax-render-core = { path = "../abrasax-render-core" }
+abrasax-terminal-launch = { path = "../abrasax-terminal-launch" }
+abrasax-terminal-image = { path = "../abrasax-terminal-image" }
+abrasax-telemetry-core = { path = "../abrasax-telemetry-core" }
+abrasax-usage-types = { path = "../abrasax-usage-types" }
+
+# Streaming
+
+# Terminal I/O (event stream for interactive auth/secret prompts). NOTE: the
+# heavier presentation deps (ratatui widgets, arboard clipboard) were dropped
+# from this foundation layer; they are unused here and live only in `abrasax-tui`.
+crossterm = { version = "0.29", features = ["event-stream"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }  # Only PNG/JPEG (skip avif/rav1e, exr, gif, tiff, etc)
+
+# NOTE: PDF text extraction (abrasax-pdf) lives in the upper abrasax-app-core crate
+# (tool/read.rs), not here.
+abrasax-background-types = { path = "../abrasax-background-types" }
+abrasax-batch-types = { path = "../abrasax-batch-types" }
+abrasax-build-meta = { path = "../abrasax-build-meta" }
+abrasax-compaction-core = { path = "../abrasax-compaction-core" }
+abrasax-config-types = { path = "../abrasax-config-types" }
+abrasax-core = { path = "../abrasax-core" }
+abrasax-memory-types = { path = "../abrasax-memory-types" }
+abrasax-message-types = { path = "../abrasax-message-types" }
+abrasax-plan = { path = "../abrasax-plan" }
+abrasax-protocol = { path = "../abrasax-protocol" }
+abrasax-session-types = { path = "../abrasax-session-types" }
+abrasax-storage = { path = "../abrasax-storage" }
+abrasax-task-types = { path = "../abrasax-task-types" }
+abrasax-tool-core = { path = "../abrasax-tool-core" }
+abrasax-tool-types = { path = "../abrasax-tool-types" }
+abrasax-side-panel-types = { path = "../abrasax-side-panel-types" }
+
+# Gzip decoding (used by provider import/helpers)
+tempfile = "3"
+qrcode = { version = "0.14.1", default-features = false }
+
+[features]
+default = ["embeddings", "bedrock"]
+# Compiles the in-crate test helpers (storage::lock_test_env,
+# auth::test_sandbox, bus::reset_models_updated_publish_state_for_tests, ...) as
+# `pub` so downstream crates' test targets can reach them. Enabled as a
+# dev-dependency feature by abrasax-app-core / abrasax / etc.; never in normal
+# (non-test) builds.
+test-support = []
+jemalloc = [
+    "dep:tikv-jemalloc-ctl",
+    "dep:tikv-jemalloc-sys",
+    "tikv-jemalloc-ctl/stats",
+]
+jemalloc-prof = [
+    "jemalloc",
+    "tikv-jemalloc-ctl/profiling",
+]
+embeddings = ["dep:abrasax-embedding"]
+# Live AWS Bedrock support (the ~20-crate AWS SDK stack) lives in
+# abrasax-provider-bedrock (aws-sdk); forward there. Without it the Bedrock
+# provider still compiles but live calls return an explanatory error.
+bedrock = ["abrasax-provider-bedrock/aws-sdk"]
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_System_Power", "Win32_System_Threading"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+global-hotkey = "0.7"
+
+[dev-dependencies]
+# Dev-only cycle (cargo permits dev-dependencies on dependents): base's
+# MultiProvider routing tests exercise the real OpenRouter/OpenAI-compatible
+# runtime through the composition-root registry, exactly like the binary.
+abrasax-provider-openrouter-runtime = { path = "../abrasax-provider-openrouter-runtime" }

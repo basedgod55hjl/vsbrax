@@ -1,14 +1,14 @@
 [Unit]
-Description=jcode server with WebSocket gateway
+Description=abrasax server with WebSocket gateway
 After=network.target
 
 [Service]
 Environment=PATH=/home/ec2-user/.local/bin:/usr/local/bin:/usr/bin:/bin
-Environment=JCODE_BEDROCK_ENABLE=1
+Environment=ABRASAX_BEDROCK_ENABLE=1
 Environment=AWS_REGION=us-east-1
-Environment=JCODE_BEDROCK_MODEL=us.anthropic.claude-opus-4-6-v1
-ExecStartPre=/bin/rm -f /run/user/1000/jcode-daemon.lock /run/user/1000/jcode.sock /run/user/1000/jcode.sock.hash /run/user/1000/jcode-debug.sock
-ExecStart=/home/ec2-user/.local/bin/jcode --provider bedrock serve
+Environment=ABRASAX_BEDROCK_MODEL=us.anthropic.claude-opus-4-6-v1
+ExecStartPre=/bin/rm -f /run/user/1000/abrasax-daemon.lock /run/user/1000/abrasax.sock /run/user/1000/abrasax.sock.hash /run/user/1000/abrasax-debug.sock
+ExecStart=/home/ec2-user/.local/bin/abrasax --provider bedrock serve
 Restart=always
 RestartSec=5
 

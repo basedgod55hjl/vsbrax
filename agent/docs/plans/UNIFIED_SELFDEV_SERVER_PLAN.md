@@ -1,4 +1,4 @@
-﻿# Unified Self-Dev / Normal Server Plan
+# Unified Self-Dev / Normal Server Plan
 
 > Status: **Implemented.**
 >
@@ -6,7 +6,7 @@
 > architecture uses a single shared server, with self-dev handled as a
 > session-local canary capability rather than a separate dedicated daemon/socket.
 > Any references below to `/tmp/VS-BRAX Agent-selfdev.sock`, `canary-wrapper`, or
-> `JCODE_SELFDEV_MODE` describe the pre-merge architecture or transition steps,
+> `ABRASAX_SELFDEV_MODE` describe the pre-merge architecture or transition steps,
 > not the current runtime design.
 
 ## Goal
@@ -153,7 +153,7 @@ This is the main behavior change and the key tradeoff for RAM savings.
 Some scripts and tests currently prefer the self-dev debug socket path and will need updating.
 
 ### Scattered env-based logic
-There are multiple `JCODE_SELFDEV_MODE` checks across startup, hot reload, and server behavior; these need to be separated into:
+There are multiple `ABRASAX_SELFDEV_MODE` checks across startup, hot reload, and server behavior; these need to be separated into:
 - client self-dev request
 - server self-dev mode (legacy / compatibility)
 - session canary capability

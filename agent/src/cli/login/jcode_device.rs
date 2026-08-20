@@ -1,4 +1,4 @@
-//! CLI orchestration for the Jcode account device authorization flow.
+//! CLI orchestration for the Abrasax account device authorization flow.
 //!
 //! Protocol parsing and HTTP behavior live in `subscription_api` so the CLI and
 //! TUI share the same contract and redaction guarantees.
@@ -46,7 +46,7 @@ where
         let delay = backoff.delay();
         if tokio::time::Instant::now() + delay >= deadline {
             anyhow::bail!(
-                "Jcode account login timed out before browser approval. Run `jcode account login` to try again."
+                "Abrasax account login timed out before browser approval. Run `abrasax account login` to try again."
             );
         }
         tokio::select! {
@@ -75,10 +75,10 @@ where
                 return Ok(KeyPollCompletion::Approved(key));
             }
             Ok(TokenPollOutcome::Expired) => anyhow::bail!(
-                "The browser approval expired or was already exchanged. Run `jcode account login` to start a new single-use flow."
+                "The browser approval expired or was already exchanged. Run `abrasax account login` to start a new single-use flow."
             ),
             Ok(TokenPollOutcome::Denied) => {
-                anyhow::bail!("Jcode account login was canceled or denied in the browser.")
+                anyhow::bail!("Abrasax account login was canceled or denied in the browser.")
             }
             Err(error) if error.is_temporary() => {
                 if !reported_offline {
@@ -106,19 +106,19 @@ fn persist_approved_key(approved: &ApprovedAccountKey) -> Result<()> {
 /// Full browser-first device login. No email or secret is requested in the
 /// terminal. A valid exchanged key is retained when plan activation times out or
 /// the user cancels activation polling.
-pub(super) async fn login_jcode_device_flow(no_browser: bool) -> Result<LoginCompletion> {
+pub(super) async fn login_abrasax_device_flow(no_browser: bool) -> Result<LoginCompletion> {
     let client = crate::provider::shared_http_client();
     let api_base = subscription_api::configured_api_base();
     let device = subscription_api::request_device_authorization(
         &client,
         &api_base,
-        Some(crate::subscription_catalog::JcodeTier::Pro),
+        Some(crate::subscription_catalog::AbrasaxTier::Pro),
     )
     .await
     .map_err(anyhow::Error::new)
-    .context("Failed to start Jcode account login")?;
+    .context("Failed to start Abrasax account login")?;
 
-    eprintln!("\nJcode Account Login");
+    eprintln!("\nAbrasax Account Login");
     eprintln!("  Opening the secure account approval page:");
     eprintln!("  {}", device.verification_uri_complete);
     eprintln!("\n  Approve the request in that browser. No terminal email entry is needed.");
@@ -174,7 +174,7 @@ pub(super) async fn login_jcode_device_flow(no_browser: bool) -> Result<LoginCom
                 .map(|tier| tier.display_name().to_string())
                 .unwrap_or(me.tier);
             eprintln!(
-                "  ✓ {} plan is active. Jcode account login is complete.",
+                "  ✓ {} plan is active. Abrasax account login is complete.",
                 tier
             );
             LoginCompletion::Active
@@ -203,13 +203,13 @@ pub(super) async fn login_jcode_device_flow(no_browser: bool) -> Result<LoginCom
         Some(ActivationOutcome::Revoked) => {
             crate::subscription_catalog::clear_account_credentials()?;
             anyhow::bail!(
-                "The newly issued account key was revoked before plan activation. Local credentials were cleared; run `jcode account login` again."
+                "The newly issued account key was revoked before plan activation. Local credentials were cleared; run `abrasax account login` again."
             );
         }
         Some(ActivationOutcome::Denied) => {
             crate::subscription_catalog::clear_account_credentials()?;
             anyhow::bail!(
-                "The account server denied plan activation checks. Local credentials were cleared; run `jcode account login` again."
+                "The account server denied plan activation checks. Local credentials were cleared; run `abrasax account login` again."
             );
         }
         None => {
@@ -219,14 +219,14 @@ pub(super) async fn login_jcode_device_flow(no_browser: bool) -> Result<LoginCom
         }
     };
 
-    crate::telemetry::record_auth_success("jcode-subscription", "device_code_browser");
+    crate::telemetry::record_auth_success("abrasax-subscription", "device_code_browser");
     Ok(completion)
 }
 
 fn print_recovery_actions() {
-    eprintln!("  Check:   jcode account status");
-    eprintln!("  Manage:  jcode account manage");
-    eprintln!("  Log out: jcode account logout");
+    eprintln!("  Check:   abrasax account status");
+    eprintln!("  Manage:  abrasax account manage");
+    eprintln!("  Log out: abrasax account logout");
 }
 
 #[cfg(test)]

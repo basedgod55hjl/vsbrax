@@ -1,4 +1,4 @@
-﻿# VS-BRAX Agent Telemetry Worker
+# VS-BRAX Agent Telemetry Worker
 
 Cloudflare Worker that receives anonymous telemetry events from VS-BRAX Agent.
 
@@ -13,7 +13,7 @@ wrangler d1 execute VS-BRAX Agent-telemetry --remote --file=users.sql
 
 Events are dual-written to two stores with different jobs:
 
-1. **Workers Analytics Engine firehose** (`jcode_telemetry_firehose` dataset):
+1. **Workers Analytics Engine firehose** (`abrasax_telemetry_firehose` dataset):
    every event, written first. Time-series store with no database size cap and
    ~90-day retention (adaptive sampling on reads; `index1` is the
    `telemetry_id`, so per-user sampling stays accurate). This is the primary
@@ -28,7 +28,7 @@ Events are dual-written to two stores with different jobs:
    curl -s "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/analytics_engine/sql" \
      -H "Authorization: Bearer $CF_ANALYTICS_TOKEN" \
      -d "SELECT blob9 AS provider, blob11 AS reason, SUM(_sample_interval) AS n
-         FROM jcode_telemetry_firehose
+         FROM abrasax_telemetry_firehose
          WHERE blob1 = 'onboarding_step' AND blob8 = 'auth_failed'
            AND timestamp > NOW() - INTERVAL '7' DAY
          GROUP BY provider, reason ORDER BY n DESC"
@@ -238,7 +238,7 @@ binary downloads are measurable through intent only; shell installs can be joine
 through first launch. Browser privacy opt-outs and un-attributed/manual installs
 are intentionally excluded from the joined funnel. Every conversion-bearing
 event is also written to the dedicated
-`jcode_install_firehose` Analytics Engine dataset before D1, so the 90-day
+`abrasax_install_firehose` Analytics Engine dataset before D1, so the 90-day
 funnel is reconstructable during a D1 outage.
 
 ### Token subscription plan events (migration 0016)
@@ -254,7 +254,7 @@ All require `account_id`; `tier` and `model` are attached where relevant
   This is the analytics<->account join anchor: it ties an anonymous CLI
   `telemetry_id` to a subscription `account_id`, and is never pruned.
 
-Web + subscription events are firehosed to the separate `jcode_web_firehose`
+Web + subscription events are firehosed to the separate `abrasax_web_firehose`
 dataset (`FIREHOSE_WEB_SCHEMA` in `src/worker.js`, also append-only): the
 main `FIREHOSE_SCHEMA` is at Analytics Engine's 20-blob/20-double capacity.
 For web events `index1` is the `visitor_id`.
@@ -282,7 +282,7 @@ wrangler d1 execute VS-BRAX Agent-telemetry --command "SELECT w.path, w.error_ki
 # Analytics Engine web-vital sample counts (append-only positions from 0018)
 curl -s "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/analytics_engine/sql" \
   -H "Authorization: Bearer $CF_ANALYTICS_TOKEN" \
-  -d "SELECT blob18 AS metric_name, blob19 AS rating, SUM(_sample_interval) AS samples, AVG(double2) AS avg_value FROM jcode_web_firehose WHERE blob1 = 'web_vital' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY metric_name, rating ORDER BY metric_name, rating"
+  -d "SELECT blob18 AS metric_name, blob19 AS rating, SUM(_sample_interval) AS samples, AVG(double2) AS avg_value FROM abrasax_web_firehose WHERE blob1 = 'web_vital' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY metric_name, rating ORDER BY metric_name, rating"
 
 # Weekly / monthly active users (canonical: use the rollup so every window
 # shares one "meaningful" definition and includes session_crash + turn_end days).
@@ -414,4 +414,4 @@ wrangler d1 execute VS-BRAX Agent-telemetry --command "WITH links AS (SELECT DIS
 - **D1 100-column cap**: production `events` has 98 columns after migration 0016 and D1 refuses `ALTER TABLE ADD COLUMN` past 100 (`too many columns`). Migration 0005's per-turn/session-cadence columns never applied to production `events`; migration 0013 moved those fields into `turn_details`/`session_details`, and migration 0016 put the web beacon fields in `web_details` for the same reason. Do not add new columns to `events`; add them to the detail tables.
 - Raw events remain the source of truth within their retention windows. The `daily_active_users` table is an ingest-time rollup for cheap dashboard queries and is the durable record beyond those windows.
 - The worker uses `INSERT OR IGNORE` keyed by `event_id`; rollups and detail rows are updated only when the canonical raw event insert succeeds, so client retries do not inflate counts.
-- Telemetry still undercounts users who opt out (`JCODE_NO_TELEMETRY`, `DO_NOT_TRACK`, `~/.VS-BRAX Agent/no_telemetry`) or whose network blocks telemetry, and may overcount one person using multiple machines.
+- Telemetry still undercounts users who opt out (`ABRASAX_NO_TELEMETRY`, `DO_NOT_TRACK`, `~/.VS-BRAX Agent/no_telemetry`) or whose network blocks telemetry, and may overcount one person using multiple machines.

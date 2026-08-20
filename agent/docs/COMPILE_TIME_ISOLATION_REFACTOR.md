@@ -1,4 +1,4 @@
-﻿# Compile-Time Isolation Refactor
+# Compile-Time Isolation Refactor
 
 This is the active migration plan for making full-feature debug/selfdev builds faster without removing features from the developer binary.
 
@@ -151,9 +151,9 @@ Success criteria:
 Current compatibility layering preserves the old monolith shape:
 
 ```rust
-pub use jcode_base::*;
-pub use jcode_app_core::*;
-pub use jcode_tui::*;
+pub use abrasax_base::*;
+pub use abrasax_app_core::*;
+pub use abrasax_tui::*;
 ```
 
 Migration approach:

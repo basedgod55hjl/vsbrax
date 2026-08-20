@@ -1,4 +1,4 @@
-﻿# Provider, Session, and Shared-Contract Boundary Audit
+# Provider, Session, and Shared-Contract Boundary Audit
 
 Status: 2026-04-16 audit note
 
@@ -300,7 +300,7 @@ Keep in main crate for now:
 
 Create `crates/VS-BRAX Agent-session-contracts`.
 
-Do this only after Phase 1, so session replay types can point at `jcode_shared_contracts::*` instead of `crate::protocol::*` or `crate::plan::*`.
+Do this only after Phase 1, so session replay types can point at `abrasax_shared_contracts::*` instead of `crate::protocol::*` or `crate::plan::*`.
 
 ### Phase 3
 

@@ -1,4 +1,4 @@
-﻿# @VS-BRAX Agent/sdk
+# @VS-BRAX Agent/sdk
 
 TypeScript SDK for the **VS-BRAX Agent harness API** (protocol v1) — the stable,
 versioned boundary between the VS-BRAX Agent agent runtime and any client.
@@ -98,8 +98,8 @@ is reserved for transport faults.
 
 | Env var | Effect |
 | --- | --- |
-| `JCODE_API_SOCKET` | Override the API socket path |
-| `JCODE_RUNTIME_DIR` | Override the runtime directory |
+| `ABRASAX_API_SOCKET` | Override the API socket path |
+| `ABRASAX_RUNTIME_DIR` | Override the runtime directory |
 | `XDG_RUNTIME_DIR` | Default runtime directory on Linux |
 
 Or pass `socketPath` to `connect()`.

@@ -1,4 +1,4 @@
-﻿# Auth Notes: OAuth + API-key Providers
+# Auth Notes: OAuth + API-key Providers
 
 This document explains how authentication works in VS-BRAX Agent.
 
@@ -95,14 +95,14 @@ The old Claude CLI shell-out path is deprecated and should only be used for
 legacy compatibility.
 
 You can still force it temporarily with:
-- `JCODE_USE_CLAUDE_CLI=1`
+- `ABRASAX_USE_CLAUDE_CLI=1`
 - or `--provider claude-subprocess` (deprecated hidden compatibility value)
 
 These environment variables control the deprecated Claude Code CLI transport:
-- `JCODE_CLAUDE_CLI_PATH` (default: `claude`)
-- `JCODE_CLAUDE_CLI_MODEL` (default: `claude-opus-4-5-20251101`)
-- `JCODE_CLAUDE_CLI_PERMISSION_MODE` (default: `bypassPermissions`)
-- `JCODE_CLAUDE_CLI_PARTIAL` (set to `0` to disable partial streaming)
+- `ABRASAX_CLAUDE_CLI_PATH` (default: `claude`)
+- `ABRASAX_CLAUDE_CLI_MODEL` (default: `claude-opus-4-5-20251101`)
+- `ABRASAX_CLAUDE_CLI_PERMISSION_MODE` (default: `bypassPermissions`)
+- `ABRASAX_CLAUDE_CLI_PARTIAL` (set to `0` to disable partial streaming)
 
 ## OpenAI / Codex OAuth
 
@@ -141,7 +141,7 @@ For **API-key** usage (no ChatGPT/Codex OAuth), the Responses API base URL is
 overridable so you can target a local or proxied Responses-API endpoint. Set one
 of (checked in this order) to an absolute `http(s)://` base that ends in the API
 version, e.g. `http://127.0.0.1:8317/v1`:
-- `JCODE_OPENAI_API_BASE`
+- `ABRASAX_OPENAI_API_BASE`
 - `OPENAI_BASE_URL`
 - `OPENAI_API_BASE`
 
@@ -308,7 +308,7 @@ Cursor uses VS-BRAX Agent's native HTTPS transport. Copilot uses GitHub device-f
   - VS-BRAX Agent uses native HTTPS requests
   - if a Cursor API key is configured, VS-BRAX Agent exchanges/uses it directly
 - Env vars:
-  - `JCODE_CURSOR_MODEL` (default: `composer-1.5`)
+  - `ABRASAX_CURSOR_MODEL` (default: `composer-1.5`)
   - `CURSOR_API_KEY` (optional; overrides saved key)
 
 ### GitHub Copilot
@@ -326,8 +326,8 @@ Cursor uses VS-BRAX Agent's native HTTPS transport. Copilot uses GitHub device-f
   7. trusted OpenCode/pi OAuth entries
   8. `gh auth token`
 - Env vars:
-  - `JCODE_COPILOT_CLI_PATH` (optional override for CLI path)
-  - `JCODE_COPILOT_MODEL` (default: `claude-sonnet-4`)
+  - `ABRASAX_COPILOT_CLI_PATH` (optional override for CLI path)
+  - `ABRASAX_COPILOT_MODEL` (default: `claude-sonnet-4`)
 
 ### Antigravity
 - Login: `VS-BRAX Agent login --provider antigravity` (native Google OAuth flow; does **not** require Antigravity to be installed)
@@ -341,13 +341,13 @@ Cursor uses VS-BRAX Agent's native HTTPS transport. Copilot uses GitHub device-f
   - VS-BRAX Agent authenticates directly and stores/refreshes Antigravity OAuth tokens itself
   - the provider transport still shells out to the Antigravity CLI for completions if you choose `--provider antigravity`
 - Env vars:
-  - `JCODE_ANTIGRAVITY_CLIENT_ID` (optional override for OAuth client id)
-  - `JCODE_ANTIGRAVITY_CLIENT_SECRET` (optional override for OAuth client secret)
-  - `JCODE_ANTIGRAVITY_VERSION` (optional override for Antigravity request fingerprint/version)
-  - `JCODE_ANTIGRAVITY_CLI_PATH` (default: `antigravity`, runtime only)
-  - `JCODE_ANTIGRAVITY_MODEL` (default: `default`)
-  - `JCODE_ANTIGRAVITY_PROMPT_FLAG` (default: `-p`)
-  - `JCODE_ANTIGRAVITY_MODEL_FLAG` (default: `--model`)
+  - `ABRASAX_ANTIGRAVITY_CLIENT_ID` (optional override for OAuth client id)
+  - `ABRASAX_ANTIGRAVITY_CLIENT_SECRET` (optional override for OAuth client secret)
+  - `ABRASAX_ANTIGRAVITY_VERSION` (optional override for Antigravity request fingerprint/version)
+  - `ABRASAX_ANTIGRAVITY_CLI_PATH` (default: `antigravity`, runtime only)
+  - `ABRASAX_ANTIGRAVITY_MODEL` (default: `default`)
+  - `ABRASAX_ANTIGRAVITY_PROMPT_FLAG` (default: `-p`)
+  - `ABRASAX_ANTIGRAVITY_MODEL_FLAG` (default: `--model`)
 
 ## Google / Gmail OAuth
 

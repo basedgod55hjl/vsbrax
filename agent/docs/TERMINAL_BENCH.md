@@ -1,10 +1,10 @@
-﻿# Terminal-Bench 2.0 with VS-BRAX Agent
+# Terminal-Bench 2.0 with VS-BRAX Agent
 
 This document describes the cleanest currently-working path for running VS-BRAX Agent on Terminal-Bench 2.0 through Harbor.
 
 ## What is in the repo
 
-- `scripts/jcode_harbor_agent.py`
+- `scripts/abrasax_harbor_agent.py`
   - Harbor custom agent adapter for VS-BRAX Agent
 - `scripts/run_terminal_bench_harbor.sh`
   - helper that wires Harbor to the adapter and a Linux-compatible VS-BRAX Agent binary
@@ -87,21 +87,21 @@ scripts/run_terminal_bench_harbor.sh \
 
 ## Useful environment variables
 
-- `JCODE_HARBOR_BINARY`
+- `ABRASAX_HARBOR_BINARY`
   - path to the Linux-compatible VS-BRAX Agent binary to upload into the task container
-- `JCODE_HARBOR_BINARY_DIR`
+- `ABRASAX_HARBOR_BINARY_DIR`
   - output directory used when auto-building the compat binary
-- `JCODE_HARBOR_OPENAI_AUTH`
+- `ABRASAX_HARBOR_OPENAI_AUTH`
   - path to the OpenAI OAuth file
-- `JCODE_HARBOR_CA_BUNDLE`
+- `ABRASAX_HARBOR_CA_BUNDLE`
   - optional host CA bundle path to upload into the task container
-- `JCODE_TB_MODEL`
+- `ABRASAX_TB_MODEL`
   - Harbor model string, default `openai/gpt-5.4`
-- `JCODE_TB_PATH`
+- `ABRASAX_TB_PATH`
   - default local Terminal-Bench path, default `/tmp/terminal-bench-2`
-- `JCODE_OPENAI_REASONING_EFFORT`
+- `ABRASAX_OPENAI_REASONING_EFFORT`
   - default `high`
-- `JCODE_OPENAI_SERVICE_TIER`
+- `ABRASAX_OPENAI_SERVICE_TIER`
   - default `priority`
 
 ## Notes on fairness and state isolation

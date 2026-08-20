@@ -13,18 +13,18 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 sdk_dir="$repo_root/sdk/typescript"
-socket="${TMPDIR:-/tmp}/jcode-sdk-e2e-$$.sock"
-log="${TMPDIR:-/tmp}/jcode-sdk-e2e-$$.log"
+socket="${TMPDIR:-/tmp}/abrasax-sdk-e2e-$$.sock"
+log="${TMPDIR:-/tmp}/abrasax-sdk-e2e-$$.log"
 
 echo "== building SDK =="
 npm --prefix "$sdk_dir" install --no-audit --no-fund --silent
 npm --prefix "$sdk_dir" run build --silent
 
 echo "== building bridge =="
-cargo build --profile selfdev -p jcode-harness-api-server --bin jcode-harness-api-bridge
+cargo build --profile selfdev -p abrasax-harness-api-server --bin abrasax-harness-api-bridge
 
 echo "== starting bridge on $socket =="
-JCODE_API_SOCKET="$socket" ./target/selfdev/jcode-harness-api-bridge >"$log" 2>&1 &
+ABRASAX_API_SOCKET="$socket" ./target/selfdev/abrasax-harness-api-bridge >"$log" 2>&1 &
 bridge_pid=$!
 cleanup() {
   kill "$bridge_pid" 2>/dev/null || true
@@ -41,10 +41,10 @@ if [ ! -S "$socket" ]; then
 fi
 
 echo "== driving a real turn =="
-JCODE_API_SOCKET="$socket" node "$sdk_dir/test/live-turn.mjs"
+ABRASAX_API_SOCKET="$socket" node "$sdk_dir/test/live-turn.mjs"
 
 echo "== exercising the control surface =="
-JCODE_API_SOCKET="$socket" node "$sdk_dir/test/live-control.mjs"
+ABRASAX_API_SOCKET="$socket" node "$sdk_dir/test/live-control.mjs"
 
 echo "== bridge log =="
 cat "$log"

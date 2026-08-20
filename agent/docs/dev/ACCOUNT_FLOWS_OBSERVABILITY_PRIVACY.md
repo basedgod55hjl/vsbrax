@@ -1,4 +1,4 @@
-﻿# Account Flows: Observability, Privacy, and Support Diagnostics
+# Account Flows: Observability, Privacy, and Support Diagnostics
 
 Security logging, audit events, metrics, traces, alerting, redaction,
 retention, and support diagnostics for the six subscription account flows:
@@ -14,7 +14,7 @@ surfaces live in this repo; backend surfaces live in `solosystems-backend`.
   (`record_auth_success` @1409, `sanitize_telemetry_label` applied to all
   auth labels @398-400; `AuthEvent` schema in
   `crates/VS-BRAX Agent-usage-types/src/lib.rs:270-284` has NO account_id/email slot,
-  by design — see the TODO at `src/cli/login/jcode_device.rs:370-374`).
+  by design — see the TODO at `src/cli/login/abrasax_device.rs:370-374`).
 - Onboarding auth funnel: `auth_provider`, `auth_method`,
   `auth_failure_reason` on onboarding step events
   (`crates/VS-BRAX Agent-telemetry-core/src/lib.rs:369-400`).
@@ -31,7 +31,7 @@ surfaces live in this repo; backend surfaces live in `solosystems-backend`.
 These values must never appear in logs, telemetry, traces, crash reports, or
 support bundles, at any log level:
 
-- `api_key` (JCODE_API_KEY) — full or truncated beyond `jc_...last4`.
+- `api_key` (ABRASAX_API_KEY) — full or truncated beyond `jc_...last4`.
 - `device_code`, magic-link tokens, approval URL query params.
 - Raw email addresses in telemetry (local logs may show what the user already
   sees on screen; telemetry must not carry email; backend audit log stores
@@ -79,7 +79,7 @@ reasons restricted to `AuthFailureReason::label` values. Additions:
   bucketed time-to-approve (e.g. <30s, <2m, <15m) — no timestamps precise
   enough to correlate with backend logs.
 - Do NOT add `account_id` to `AuthEvent` (the existing TODO at
-  `src/cli/login/jcode_device.rs:370` should be resolved as "backend audit
+  `src/cli/login/abrasax_device.rs:370` should be resolved as "backend audit
   owns account-linked events; client telemetry stays anonymous").
 
 ## Metrics and alerting (backend)
@@ -157,7 +157,7 @@ the audit table. No flow requires the user to paste a key or link.
 ## Follow-ups (actionable in this repo)
 
 - Add `record_auth_failure` for the VS-BRAX Agent device flow (labels only).
-- Resolve the `account_linked` TODO in `jcode_device.rs` as "won't add to
+- Resolve the `account_linked` TODO in `abrasax_device.rs` as "won't add to
   client telemetry" and point to backend audit.
 - Add SN-03-style output-capture test asserting the never-log list for the
   login flow, and a doctor command for account diagnostics.

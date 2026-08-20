@@ -2,16 +2,16 @@
  * Streaming chat example.
  *
  * Requires a running bridge:
- *   cargo run -p jcode-harness-api-server --bin jcode-harness-api-bridge
+ *   cargo run -p abrasax-harness-api-server --bin abrasax-harness-api-bridge
  *
  * Usage: node examples/stream-chat.mjs "your prompt"
  */
 
-import { JcodeClient } from "../dist/index.js";
+import { AbrasaxClient } from "../dist/index.js";
 
 const prompt = process.argv.slice(2).join(" ") || "Say hello in five words.";
 
-const client = await JcodeClient.connect({ clientName: "stream-chat-example/0.1" });
+const client = await AbrasaxClient.connect({ clientName: "stream-chat-example/0.1" });
 console.log(`connected to ${client.server} (${client.capabilities.join(", ")})`);
 
 client.on("harness_error", (frame) => console.error("harness error:", frame.message));

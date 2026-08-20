@@ -1,4 +1,4 @@
-﻿# Discovery call-rate benchmark
+# Discovery call-rate benchmark
 
 `scripts/benchmark_discovery_rate.py` measures the policy we actually want to
 hold: **the agent calls `discover_tools` whenever it reaches for an external
@@ -90,7 +90,7 @@ bypasses.
 ## Benchmark traffic marking
 
 Like the catalog benchmark, the runner starts a dedicated server with
-`JCODE_DISCOVERY_BENCHMARK=1`, so every request carries
+`ABRASAX_DISCOVERY_BENCHMARK=1`, so every request carries
 `x-VS-BRAX Agent-discovery-benchmark: 1` and telemetry carries `benchmark_run: true`.
 Benchmark traffic must be excluded from sponsor, billing, and organic-usage
 reporting.

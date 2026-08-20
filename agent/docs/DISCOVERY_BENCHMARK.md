@@ -1,4 +1,4 @@
-﻿# Discovery trigger benchmark
+# Discovery trigger benchmark
 
 `scripts/benchmark_discovery.py` measures whether ordinary user requests cause
 VS-BRAX Agent to browse the expected sponsored-discovery category and receive a specific
@@ -102,7 +102,7 @@ cannot be hidden by a later clean attempt.
 The runner uses a dedicated VS-BRAX Agent server with:
 
 ```text
-JCODE_DISCOVERY_BENCHMARK=1
+ABRASAX_DISCOVERY_BENCHMARK=1
 ```
 
 Every Discovery request from that server carries:

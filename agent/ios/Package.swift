@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "JCodeKit",
+    name: "AbrasaxKit",
     platforms: [
         .iOS(.v17),
         .macOS(.v14),
     ],
     products: [
-        .library(name: "JCodeKit", targets: ["JCodeKit"])
+        .library(name: "AbrasaxKit", targets: ["AbrasaxKit"])
     ],
     targets: [
         .target(
-            name: "JCodeKit",
+            name: "AbrasaxKit",
             swiftSettings: [.enableUpcomingFeature("StrictConcurrency")]
         ),
         .testTarget(
-            name: "JCodeKitTests",
-            dependencies: ["JCodeKit"]
+            name: "AbrasaxKitTests",
+            dependencies: ["AbrasaxKit"]
         ),
     ]
 )

@@ -1,4 +1,4 @@
-﻿# VS-BRAX Agent Telemetry
+# VS-BRAX Agent Telemetry
 
 VS-BRAX Agent collects **anonymous, minimal usage statistics** to help understand how many people use VS-BRAX Agent, what providers/models are popular, whether onboarding works, which feature families are used, how often sessions succeed, and whether performance/regressions are improving. This data helps prioritize development. **We do not collect your prompts, your code, or your conversation transcripts.**
 
@@ -84,7 +84,7 @@ paths, and tool setup instructions are **not** included in telemetry. The
 backend rejects unknown phase, outcome, and failure labels rather than storing
 arbitrary strings.
 
-The benchmark runner sets `JCODE_DISCOVERY_BENCHMARK=1`. Discovery requests then
+The benchmark runner sets `ABRASAX_DISCOVERY_BENCHMARK=1`. Discovery requests then
 carry `x-VS-BRAX Agent-discovery-benchmark: 1`, and the corresponding telemetry event has
 `benchmark_run: true`.
 
@@ -306,7 +306,7 @@ Any of these methods will disable telemetry completely:
 
 ```bash
 # Option 1: Environment variable
-export JCODE_NO_TELEMETRY=1
+export ABRASAX_NO_TELEMETRY=1
 
 # Option 2: Standard DO_NOT_TRACK (https://consoledonottrack.com/)
 export DO_NOT_TRACK=1

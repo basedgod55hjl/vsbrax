@@ -1,4 +1,4 @@
-﻿# Render-Core Parity: Acceptance Criteria, Thresholds, and Statistical Reporting
+# Render-Core Parity: Acceptance Criteria, Thresholds, and Statistical Reporting
 
 Status: adopted for the `VS-BRAX Agent-render-core` -> TUI switchover.
 Harness: `crates/VS-BRAX Agent-tui-markdown/src/render_core_adapter_tests.rs`
@@ -31,8 +31,8 @@ about the residual mismatch probability, not what we tolerate.
 | Tier | Iterations per fuzz suite | Gate | Residual mismatch rate bound (95%, rule of three: p < 3/N) |
 |------|---------------------------|------|--------------------------------------------------|
 | CI (default) | 5000 (L1, L2), 3000×3 widths = 9000 renders (L3) | must pass on every PR touching `VS-BRAX Agent-tui-markdown`, `VS-BRAX Agent-render-core` | p < 6.0e-4 per generated document (L1/L2); p < 1.0e-3 per doc per width (L3) |
-| Pre-switchover deep run | `JCODE_MD_FUZZ_ITERS=100000` | must pass once, on the exact commit proposed for switchover | p < 3.0e-5 per generated document |
-| Nightly (optional soak) | `JCODE_MD_FUZZ_ITERS=25000`, rotating `JCODE_MD_FUZZ_SEED` (e.g. epoch-day) | failures file an issue with repro seed | accumulates coverage across seeds over time |
+| Pre-switchover deep run | `ABRASAX_MD_FUZZ_ITERS=100000` | must pass once, on the exact commit proposed for switchover | p < 3.0e-5 per generated document |
+| Nightly (optional soak) | `ABRASAX_MD_FUZZ_ITERS=25000`, rotating `ABRASAX_MD_FUZZ_SEED` (e.g. epoch-day) | failures file an issue with repro seed | accumulates coverage across seeds over time |
 
 Rationale for the bound: with N i.i.d. generated documents and 0 observed
 mismatches, the one-sided 95% upper confidence bound on the mismatch
@@ -62,9 +62,9 @@ contract on failure:
 - **Reproducibility:** each failure reports the iteration index `i`; the
   per-iteration RNG is derived as
   `seed = base_seed + i * 0x100000001B3`, so any single failure is
-  reproducible with `JCODE_MD_FUZZ_SEED=<base_seed> JCODE_MD_FUZZ_ITERS=<i+1>`
+  reproducible with `ABRASAX_MD_FUZZ_SEED=<base_seed> ABRASAX_MD_FUZZ_ITERS=<i+1>`
   (or by re-deriving the single seed). `base_seed` defaults are fixed
-  constants per suite and overridable via `JCODE_MD_FUZZ_SEED`.
+  constants per suite and overridable via `ABRASAX_MD_FUZZ_SEED`.
 - **Bounded failure dump:** collect up to 5 failing cases before aborting the
   loop, then report all of them (input document, core output, legacy output)
   in one assertion message. Never fail on only the first case; multiple
@@ -108,10 +108,10 @@ the switchover PR with a fixed-corpus case demonstrating parity.
 cargo test -p VS-BRAX Agent-tui-markdown --lib render_core_adapter
 
 # Deep run (switchover gate; ~80s on an XPS 13)
-JCODE_MD_FUZZ_ITERS=100000 \
+ABRASAX_MD_FUZZ_ITERS=100000 \
   cargo test -p VS-BRAX Agent-tui-markdown --lib render_core_adapter::tests::fuzz
 
 # Alternate-seed confirmation
-JCODE_MD_FUZZ_ITERS=100000 JCODE_MD_FUZZ_SEED=20260713 \
+ABRASAX_MD_FUZZ_ITERS=100000 ABRASAX_MD_FUZZ_SEED=20260713 \
   cargo test -p VS-BRAX Agent-tui-markdown --lib render_core_adapter::tests::fuzz
 ```

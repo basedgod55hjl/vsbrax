@@ -1,4 +1,4 @@
--- Daily dollar value of tokens flowing through jcode, one row per day.
+-- Daily dollar value of tokens flowing through abrasax, one row per day.
 --
 -- Usage:
 --   npm run token-value:daily

@@ -1,4 +1,4 @@
-﻿# VS-BRAX Agent phone server (managed cloud host)
+# VS-BRAX Agent phone server (managed cloud host)
 
 A self-managing EC2 host that runs `VS-BRAX Agent serve` with the WebSocket gateway so
 phones (the iOS app, or SSH clients like Termius) can drive VS-BRAX Agent sessions
@@ -40,8 +40,8 @@ AWS Budget $10 ──▶ SNS VS-BRAX Agent-guard-stop ──▶ breaker lambda �
 
 - `~/.VS-BRAX Agent/config.toml`: `[provider]` default bedrock/Opus 4.6, `[gateway] enabled = true, port 7643, bind 0.0.0.0`
   (note: `~/.VS-BRAX Agent/config.toml`, NOT `~/.config/VS-BRAX Agent/`)
-- `~/.bashrc` env: `JCODE_BEDROCK_ENABLE=1`, `AWS_REGION=us-east-1`,
-  `JCODE_BEDROCK_MODEL=us.anthropic.claude-opus-4-6-v1`, `JCODE_GATEWAY_HOST=100.109.78.41`
+- `~/.bashrc` env: `ABRASAX_BEDROCK_ENABLE=1`, `AWS_REGION=us-east-1`,
+  `ABRASAX_BEDROCK_MODEL=us.anthropic.claude-opus-4-6-v1`, `ABRASAX_GATEWAY_HOST=100.109.78.41`
 - Helpers: `~/bin/jc` (VS-BRAX Agent with bedrock), `~/bin/phone` (attach-or-create tmux VS-BRAX Agent)
 - `loginctl enable-linger ec2-user` so the user service runs at boot
 - Instance attr `instance-initiated-shutdown-behavior=stop` so `poweroff` = stopped (not billed)
@@ -82,7 +82,7 @@ The legacy `AWS/Billing/EstimatedCharges` alarms were removed because the accoun
 1. Launch AL2023 x86_64 with an encrypted 30GB gp3 root volume, the Bedrock + SSM instance role, and a security group with no inbound rules. Associate an Elastic IP for outbound internet while running.
 2. Install VS-BRAX Agent, Tailscale, tmux, and git. Join the tailnet as `VS-BRAX Agent-phone`; set the VS-BRAX Agent gateway host to `100.109.78.41`.
 3. Copy `units/VS-BRAX Agent-serve.service` and the idle-autostop unit/script; enable linger and the required services. The legacy pair service is not required.
-4. Deploy `wake-lambda.py` as `waker.py`, set `WAKE_TOKEN`, `INSTANCE_ID`, and `JCODE_GATEWAY_HOST=100.109.78.41`, and grant scoped EC2/SSM permissions. API Gateway HTTP API routes to the Lambda.
+4. Deploy `wake-lambda.py` as `waker.py`, set `WAKE_TOKEN`, `INSTANCE_ID`, and `ABRASAX_GATEWAY_HOST=100.109.78.41`, and grant scoped EC2/SSM permissions. API Gateway HTTP API routes to the Lambda.
 5. Create the SNS topics/subscriptions and connect the $10 Budget's 100% actual notification to `VS-BRAX Agent-guard-stop`.
 6. Enable CloudTrail, Access Analyzer, account-level S3 Block Public Access, EBS encryption by default, and bounded CloudWatch log retention.
 7. Test: breaker stops the host; wake link starts it; SSM reports online; tailnet `/health` works; pair button returns a code targeting the tailnet address.

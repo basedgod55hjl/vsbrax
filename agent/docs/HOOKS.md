@@ -1,4 +1,4 @@
-﻿# Lifecycle Hooks
+# Lifecycle Hooks
 
 VS-BRAX Agent can run external commands at well-defined lifecycle points so other
 programs can observe or gate agent behavior without forking VS-BRAX Agent. Hooks
@@ -19,8 +19,8 @@ pre_tool_timeout_ms = 5000
 ```
 
 Env overrides (always win; empty value disables a config hook):
-`JCODE_HOOK_TURN_END`, `JCODE_HOOK_SESSION_START`, `JCODE_HOOK_SESSION_END`,
-`JCODE_HOOK_PRE_TOOL`, `JCODE_HOOK_POST_TOOL`, `JCODE_HOOK_PRE_TOOL_TIMEOUT_MS`.
+`ABRASAX_HOOK_TURN_END`, `ABRASAX_HOOK_SESSION_START`, `ABRASAX_HOOK_SESSION_END`,
+`ABRASAX_HOOK_PRE_TOOL`, `ABRASAX_HOOK_POST_TOOL`, `ABRASAX_HOOK_PRE_TOOL_TIMEOUT_MS`.
 
 ## Common contract
 
@@ -32,11 +32,11 @@ Env overrides (always win; empty value disables a config hook):
 
 | Variable | Meaning |
 | --- | --- |
-| `JCODE_HOOK_EVENT` | `turn_end`, `session_start`, `session_end`, `pre_tool`, `post_tool` |
-| `JCODE_HOOK_SESSION_ID` | Session the event belongs to |
-| `JCODE_HOOK_CWD` | Session working directory |
-| `JCODE_HOOK_PAYLOAD` | JSON object mirroring all fields (capped at 16 KB) |
-| `JCODE_HOOKS_DISABLED` | Always `1`; suppresses hooks in nested VS-BRAX Agent calls (recursion guard) |
+| `ABRASAX_HOOK_EVENT` | `turn_end`, `session_start`, `session_end`, `pre_tool`, `post_tool` |
+| `ABRASAX_HOOK_SESSION_ID` | Session the event belongs to |
+| `ABRASAX_HOOK_CWD` | Session working directory |
+| `ABRASAX_HOOK_PAYLOAD` | JSON object mirroring all fields (capped at 16 KB) |
+| `ABRASAX_HOOKS_DISABLED` | Always `1`; suppresses hooks in nested VS-BRAX Agent calls (recursion guard) |
 
 ## Observer hooks
 
@@ -49,29 +49,29 @@ the agent; failures are only logged.
 Fires when an agent turn completes (streaming turn path, which covers TUI,
 desktop, swarm workers, and headless sessions).
 
-Extra fields: `JCODE_HOOK_STATUS` (`ok`/`error`), `JCODE_HOOK_DURATION_MS`,
-`JCODE_HOOK_MODEL`, `JCODE_HOOK_LAST_ASSISTANT_TEXT` (first 4000 chars),
-`JCODE_HOOK_ERROR` (on failure).
+Extra fields: `ABRASAX_HOOK_STATUS` (`ok`/`error`), `ABRASAX_HOOK_DURATION_MS`,
+`ABRASAX_HOOK_MODEL`, `ABRASAX_HOOK_LAST_ASSISTANT_TEXT` (first 4000 chars),
+`ABRASAX_HOOK_ERROR` (on failure).
 
 ### `session_start` / `session_end`
 
 `session_start` fires when an agent session becomes active, with
-`JCODE_HOOK_SOURCE` = `create` (brand new), `attach` (existing session object
+`ABRASAX_HOOK_SOURCE` = `create` (brand new), `attach` (existing session object
 attached), or `resume` (restored by id). `session_end` fires on normal close
-(`JCODE_HOOK_SOURCE=close`).
+(`ABRASAX_HOOK_SOURCE=close`).
 
 ### `post_tool`
 
-Fires after every tool call. Extra fields: `JCODE_HOOK_TOOL_NAME`,
-`JCODE_HOOK_STATUS`, `JCODE_HOOK_DURATION_MS`, `JCODE_HOOK_OUTPUT_BYTES` (on
-success), `JCODE_HOOK_ERROR` (on failure).
+Fires after every tool call. Extra fields: `ABRASAX_HOOK_TOOL_NAME`,
+`ABRASAX_HOOK_STATUS`, `ABRASAX_HOOK_DURATION_MS`, `ABRASAX_HOOK_OUTPUT_BYTES` (on
+success), `ABRASAX_HOOK_ERROR` (on failure).
 
 ## Gate hook: `pre_tool`
 
 `pre_tool` runs **synchronously before every tool call** and can block it:
 
-- The hook receives `JCODE_HOOK_TOOL_NAME` plus the full tool input JSON on
-  **stdin** (and a 16 KB-truncated copy in `JCODE_HOOK_TOOL_INPUT`).
+- The hook receives `ABRASAX_HOOK_TOOL_NAME` plus the full tool input JSON on
+  **stdin** (and a 16 KB-truncated copy in `ABRASAX_HOOK_TOOL_INPUT`).
 - **Exit 0**: allow the call.
 - **Exit 2**: block the call. The hook's stderr (trimmed, capped at 2000
   chars) is returned to the model as the tool error, so the model can adapt.
@@ -87,10 +87,10 @@ hook itself robust (it is your trust boundary, not VS-BRAX Agent).
 ```bash
 #!/usr/bin/env bash
 # ~/bin/VS-BRAX Agent-tool-policy
-# stdin: tool input JSON. Env: JCODE_HOOK_TOOL_NAME, JCODE_HOOK_SESSION_ID...
+# stdin: tool input JSON. Env: ABRASAX_HOOK_TOOL_NAME, ABRASAX_HOOK_SESSION_ID...
 input=$(cat)
 
-case "$JCODE_HOOK_TOOL_NAME" in
+case "$ABRASAX_HOOK_TOOL_NAME" in
   bash)
     if grep -qE 'rm -rf /([^a-zA-Z]|$)|mkfs|dd if=' <<<"$input"; then
       echo "blocked: destructive shell command" >&2
@@ -112,21 +112,21 @@ exit 0
 ```bash
 #!/usr/bin/env bash
 # ~/bin/VS-BRAX Agent-turn-notify
-if [ "$JCODE_HOOK_STATUS" = ok ]; then icon=✅; else icon=❌; fi
-tmux display-message "VS-BRAX Agent $icon ${JCODE_HOOK_SESSION_ID:0:12}" 2>/dev/null
-notify-send "VS-BRAX Agent turn $JCODE_HOOK_STATUS" \
-  "${JCODE_HOOK_LAST_ASSISTANT_TEXT:0:120}" 2>/dev/null
+if [ "$ABRASAX_HOOK_STATUS" = ok ]; then icon=✅; else icon=❌; fi
+tmux display-message "VS-BRAX Agent $icon ${ABRASAX_HOOK_SESSION_ID:0:12}" 2>/dev/null
+notify-send "VS-BRAX Agent turn $ABRASAX_HOOK_STATUS" \
+  "${ABRASAX_HOOK_LAST_ASSISTANT_TEXT:0:120}" 2>/dev/null
 exit 0
 ```
 
 ## Example: JSON event log of all hook activity
 
-Point several hooks at one script and fan out on `JCODE_HOOK_EVENT`:
+Point several hooks at one script and fan out on `ABRASAX_HOOK_EVENT`:
 
 ```bash
 #!/usr/bin/env bash
 # ~/bin/VS-BRAX Agent-event-log
-echo "$JCODE_HOOK_PAYLOAD" >> ~/.local/state/VS-BRAX Agent-events.jsonl
+echo "$ABRASAX_HOOK_PAYLOAD" >> ~/.local/state/VS-BRAX Agent-events.jsonl
 ```
 
 ```toml
@@ -143,5 +143,5 @@ post_tool     = "~/bin/VS-BRAX Agent-event-log"
   change hooks without restarting VS-BRAX Agent.
 - Hot paths (`pre_tool`/`post_tool`) check whether a hook is configured before
   building any payload, so unconfigured hooks cost ~nothing.
-- The recursion guard (`JCODE_HOOKS_DISABLED=1`) means a hook may safely call
+- The recursion guard (`ABRASAX_HOOKS_DISABLED=1`) means a hook may safely call
   `VS-BRAX Agent` CLI commands without re-triggering hooks in that nested process.

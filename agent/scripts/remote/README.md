@@ -1,4 +1,4 @@
-﻿# Remote VS-BRAX Agent (cross-machine)
+# Remote VS-BRAX Agent (cross-machine)
 
 Drive a VS-BRAX Agent session running on **another machine** from this one, over the
 WebSocket gateway (`crates/VS-BRAX Agent-base/src/gateway.rs`).
@@ -29,7 +29,7 @@ The equivalent by hand:
    bind_addr = "0.0.0.0"
    ```
 
-   `JCODE_GATEWAY_ENABLED=1` works as an env override.
+   `ABRASAX_GATEWAY_ENABLED=1` works as an env override.
 
 2. Restart the server so it picks up the config:
 

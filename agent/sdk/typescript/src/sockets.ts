@@ -1,5 +1,5 @@
 /**
- * Socket path resolution, mirroring `jcode-harness-api::sockets`.
+ * Socket path resolution, mirroring `abrasax-harness-api::sockets`.
  *
  * The bridge and every client must resolve the same directory or nothing can
  * connect, so the rules here follow the Rust module exactly.
@@ -9,14 +9,14 @@ import os from "node:os";
 import path from "node:path";
 
 export function runtimeDir(): string {
-  const explicit = process.env.JCODE_RUNTIME_DIR;
+  const explicit = process.env.ABRASAX_RUNTIME_DIR;
   if (explicit) return explicit;
   const xdg = process.env.XDG_RUNTIME_DIR;
   if (xdg) return xdg;
   if (process.platform === "darwin" && process.env.TMPDIR) {
     return process.env.TMPDIR;
   }
-  return path.join(os.tmpdir(), `jcode-${userDiscriminator()}`);
+  return path.join(os.tmpdir(), `abrasax-${userDiscriminator()}`);
 }
 
 function userDiscriminator(): string {
@@ -36,12 +36,12 @@ function sanitize(raw: string): string {
   return out === "" ? "user" : out;
 }
 
-/** Path of the versioned harness API socket. `JCODE_API_SOCKET` overrides. */
+/** Path of the versioned harness API socket. `ABRASAX_API_SOCKET` overrides. */
 export function apiSocketPath(): string {
-  return process.env.JCODE_API_SOCKET ?? path.join(runtimeDir(), "jcode-api.sock");
+  return process.env.ABRASAX_API_SOCKET ?? path.join(runtimeDir(), "abrasax-api.sock");
 }
 
-/** Path of the internal daemon socket. `JCODE_SOCKET` overrides. */
+/** Path of the internal daemon socket. `ABRASAX_SOCKET` overrides. */
 export function legacySocketPath(): string {
-  return process.env.JCODE_SOCKET ?? path.join(runtimeDir(), "jcode.sock");
+  return process.env.ABRASAX_SOCKET ?? path.join(runtimeDir(), "abrasax.sock");
 }

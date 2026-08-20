@@ -1,4 +1,4 @@
-﻿# Compile Performance Plan
+# Compile Performance Plan
 
 This document tracks the plan to make VS-BRAX Agent's self-dev / refactor loop much faster
 without sacrificing full-feature builds.
@@ -69,7 +69,7 @@ even if they cannot reach the same fast path.
   - enables `sccache` automatically if installed
   - prefers `clang + lld` on Linux x86_64
   - uses the dedicated Cargo `selfdev` profile for `VS-BRAX Agent` self-dev build/reload paths
-  - can still opt into `mold` via `JCODE_FAST_LINKER=mold`
+  - can still opt into `mold` via `ABRASAX_FAST_LINKER=mold`
 - Route refactor-shadow builds through that wrapper.
 
 ### Phase 2 — Measurement and repeatability
@@ -92,7 +92,7 @@ Use it when capturing comparable before/after numbers for refactors.
 - 2026-03-25: upgraded `scripts/dev_cargo.sh` with `--print-setup` plus clearer cache/linker
   diagnostics so developers can confirm whether `sccache` / fast-linker paths are actually active.
 - 2026-03-30: removed the per-build `build.rs` timestamp/build-number churn from local source
-  builds. `JCODE_VERSION` for source builds is now stable per `Cargo.toml` version + git hash,
+  builds. `ABRASAX_VERSION` for source builds is now stable per `Cargo.toml` version + git hash,
   while UI/version build-time display comes from the binary mtime at runtime. Validation on this
   machine: two no-op release-VS-BRAX Agent runs measured **221.688s then 0.559s**, confirming the main
   crate no longer recompiles just because build metadata changed.
@@ -163,7 +163,7 @@ Use it when capturing comparable before/after numbers for refactors.
   enables adaptive low-memory overrides for `--profile selfdev` when Linux + earlyoom + no swap +
   <24 GiB RAM + <8 GiB currently available RAM are detected: `CARGO_INCREMENTAL=1`,
   `CARGO_PROFILE_SELFDEV_INCREMENTAL=true`, and `CARGO_PROFILE_SELFDEV_CODEGEN_UNITS=256`. Use
-  `JCODE_SELFDEV_LOW_MEMORY=off` to disable, or `JCODE_SELFDEV_LOW_MEMORY=on` to force. Initial
+  `ABRASAX_SELFDEV_LOW_MEMORY=off` to disable, or `ABRASAX_SELFDEV_LOW_MEMORY=on` to force. Initial
   validation completed under the earlier settings in **2m34s** after an interrupted partial build
   reused artifacts; a later benchmark with 9.4 GiB available showed that preserving the inherited
   selfdev profile can reduce warm edit builds from about **60s** to about **14s** when there is
@@ -186,12 +186,12 @@ Use it when capturing comparable before/after numbers for refactors.
 - 2026-05-05: removed unused `reqwest/blocking` from `VS-BRAX Agent-provider-core`; static search showed
   no blocking API usage in that crate. Validation: `cargo check --profile selfdev -p
   VS-BRAX Agent-provider-core` and full `cargo check --profile selfdev -p VS-BRAX Agent --bin VS-BRAX Agent` passed.
-- 2026-05-03: added `JCODE_DEV_FEATURE_PROFILE` to `scripts/dev_cargo.sh` so compile-speed probes and
+- 2026-05-03: added `ABRASAX_DEV_FEATURE_PROFILE` to `scripts/dev_cargo.sh` so compile-speed probes and
   narrow inner-loop builds can consistently select feature sets without repeating Cargo flags. Profiles:
   `default`, `minimal`/`none` (`--no-default-features`), `pdf` (`--no-default-features --features pdf`),
   `embeddings` (`--no-default-features --features embeddings`), and `full` (`--features embeddings,pdf`).
   The wrapper leaves explicit `--features` / `--no-default-features` cargo args untouched. Validation on
-  this machine: `JCODE_DEV_FEATURE_PROFILE=minimal scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet` passed.
+  this machine: `ABRASAX_DEV_FEATURE_PROFILE=minimal scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet` passed.
 - 2026-05-03: disabled Cargo auto-discovery for root binary targets and moved developer-only helper
   binaries (`tui_bench`, `session_memory_bench`, `mermaid_side_panel_probe`) behind the opt-in
   `dev-bins` feature. This keeps broad normal checks focused on production/test targets while preserving
@@ -281,10 +281,10 @@ Start with the highest-leverage cache boundaries:
 - 2026-05-23: reverted that default-feature split because embedding-backed
   memory recall and semantic retrieval should work out of the box in normal
   builds. Default builds now enable both `pdf` and `embeddings`; developers who
-  need compile-speed probes can use `JCODE_DEV_FEATURE_PROFILE=minimal` or
-  `JCODE_DEV_FEATURE_PROFILE=pdf` to skip the local inference stack. Full local
+  need compile-speed probes can use `ABRASAX_DEV_FEATURE_PROFILE=minimal` or
+  `ABRASAX_DEV_FEATURE_PROFILE=pdf` to skip the local inference stack. Full local
   inference remains available explicitly via `--features embeddings` or
-  `JCODE_DEV_FEATURE_PROFILE=full` when testing non-default feature paths.
+  `ABRASAX_DEV_FEATURE_PROFILE=full` when testing non-default feature paths.
   Validation target: `cargo tree -p VS-BRAX Agent --edges normal --depth 1` should
   include both `VS-BRAX Agent-pdf` and `VS-BRAX Agent-embedding`; `--no-default-features` should
   include neither.
@@ -667,7 +667,7 @@ remaining crate-size effect:
 
 2. **Stopped git activity from forcing full-tree recompiles** (`crates/VS-BRAX Agent-build-meta/build.rs`, commit
    `8d87b2c0`). This was the dominant inner-loop tax. `VS-BRAX Agent-build-meta` embeds version/git metadata that
-   every crate consumes via `env!("JCODE_*")`. It (a) declared `.git/HEAD` + `.git/index` as
+   every crate consumes via `env!("ABRASAX_*")`. It (a) declared `.git/HEAD` + `.git/index` as
    `rerun-if-changed` inputs and (b) auto-incremented a persistent patch counter on every rerun. Cargo
    marks a build script dirty whenever a declared input is newer than its output, reruns it, and then
    force-recompiles all dependents via `StaleDepFingerprint`; the counter guaranteed the output actually
@@ -676,7 +676,7 @@ remaining crate-size effect:
 
    Fix: derive the dev patch number deterministically from committed git state
    (`base.patch + commits-since-base-tag`, a pure function of HEAD) and drop the `.git/*` rerun triggers,
-   keeping `Cargo.toml` + `JCODE_RELEASE_BUILD`/`JCODE_BUILD_SEMVER`/`JCODE_BUILD_GIT_*` env triggers so
+   keeping `Cargo.toml` + `ABRASAX_RELEASE_BUILD`/`ABRASAX_BUILD_SEMVER`/`ABRASAX_BUILD_GIT_*` env triggers so
    release/dist builds still embed exact metadata.
 
    Measured (selfdev, warm, this machine):
@@ -708,12 +708,12 @@ scripts/dev_cargo.sh build --profile selfdev -p VS-BRAX Agent --bin VS-BRAX Agen
 scripts/dev_cargo.sh --print-setup
 ```
 
-For narrower feature-set probes, set `JCODE_DEV_FEATURE_PROFILE` instead of spelling out Cargo flags:
+For narrower feature-set probes, set `ABRASAX_DEV_FEATURE_PROFILE` instead of spelling out Cargo flags:
 
 ```bash
-JCODE_DEV_FEATURE_PROFILE=minimal scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet
-JCODE_DEV_FEATURE_PROFILE=pdf scripts/dev_cargo.sh build --profile selfdev -p VS-BRAX Agent --bin VS-BRAX Agent --quiet
-JCODE_DEV_FEATURE_PROFILE=full scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet
+ABRASAX_DEV_FEATURE_PROFILE=minimal scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet
+ABRASAX_DEV_FEATURE_PROFILE=pdf scripts/dev_cargo.sh build --profile selfdev -p VS-BRAX Agent --bin VS-BRAX Agent --quiet
+ABRASAX_DEV_FEATURE_PROFILE=full scripts/dev_cargo.sh check -p VS-BRAX Agent --lib --quiet
 ```
 
 This is especially useful because default `VS-BRAX Agent` enables both `embeddings` and `pdf`; in the current
@@ -736,16 +736,16 @@ The wrapper:
 - uses `sccache` automatically when available **for non-incremental builds only**
 - prefers `lld` locally on Linux x86_64
 - uses the fast `selfdev` Cargo profile for self-dev build/reload workflows
-- can inject a named feature profile via `JCODE_DEV_FEATURE_PROFILE` unless explicit feature args are present
+- can inject a named feature profile via `ABRASAX_DEV_FEATURE_PROFILE` unless explicit feature args are present
 - avoids hard-forcing a linker mode that may be broken on a given machine
 - can print the currently selected cache/linker setup with `--print-setup`
 
 Override linker mode explicitly when needed:
 
 ```bash
-JCODE_FAST_LINKER=lld scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
-JCODE_FAST_LINKER=mold scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
-JCODE_FAST_LINKER=system scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
+ABRASAX_FAST_LINKER=lld scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
+ABRASAX_FAST_LINKER=mold scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
+ABRASAX_FAST_LINKER=system scripts/dev_cargo.sh build --release -p VS-BRAX Agent --bin VS-BRAX Agent
 ```
 
 ### sccache: non-incremental only
@@ -766,21 +766,21 @@ wrapper overhead and a misleading "enabled" status.
 Overrides:
 
 ```bash
-JCODE_SCCACHE=on   scripts/dev_cargo.sh build --profile selfdev ...   # force-enable
-JCODE_SCCACHE=off  scripts/dev_cargo.sh build --profile release-lto ... # force-disable
+ABRASAX_SCCACHE=on   scripts/dev_cargo.sh build --profile selfdev ...   # force-enable
+ABRASAX_SCCACHE=off  scripts/dev_cargo.sh build --profile release-lto ... # force-disable
 CARGO_INCREMENTAL=0 scripts/dev_cargo.sh build --profile selfdev ...   # makes it cacheable
 ```
 
 - 2026-05-29: made sccache incremental-aware. Validation on this machine:
   `--print-setup` reports `skipped-incremental` for `--profile selfdev` and `enabled`
-  for `--profile release-lto`; `JCODE_SCCACHE=on` and `CARGO_INCREMENTAL=0` both
+  for `--profile release-lto`; `ABRASAX_SCCACHE=on` and `CARGO_INCREMENTAL=0` both
   re-enable it for selfdev. A clean `VS-BRAX Agent-azure-auth` rebuild under the old
   always-on sccache showed `0/54` cache hits, confirming the prior wasted overhead.
 
 ### Remote build host fast-fail / fast-recovery
 
-When `JCODE_REMOTE_CARGO=1` (commonly set in `~/.config/VS-BRAX Agent/remote-build.env`),
-`dev_cargo.sh` offloads builds to `JCODE_REMOTE_HOST` via `scripts/remote_build.sh`.
+When `ABRASAX_REMOTE_CARGO=1` (commonly set in `~/.config/VS-BRAX Agent/remote-build.env`),
+`dev_cargo.sh` offloads builds to `ABRASAX_REMOTE_HOST` via `scripts/remote_build.sh`.
 The preflight is designed so that remote builds "just work" when the host is up,
 without paying a slow timeout when it is down:
 
@@ -798,11 +798,11 @@ without paying a slow timeout when it is down:
 Tunables (all optional):
 
 ```bash
-JCODE_REMOTE_TCP_TIMEOUT=1            # first-probe TCP timeout (seconds, fractional ok)
-JCODE_REMOTE_RECOVERY_TCP_TIMEOUT=0.3 # probe timeout while host was recently down
-JCODE_REMOTE_DOWN_TTL=300             # how long to keep using the recovery timeout
-JCODE_REMOTE_TCP_PROBE=0              # disable the pre-probe; use SSH preflight only
-JCODE_REMOTE_CARGO=0                  # disable remote builds entirely for one command
+ABRASAX_REMOTE_TCP_TIMEOUT=1            # first-probe TCP timeout (seconds, fractional ok)
+ABRASAX_REMOTE_RECOVERY_TCP_TIMEOUT=0.3 # probe timeout while host was recently down
+ABRASAX_REMOTE_DOWN_TTL=300             # how long to keep using the recovery timeout
+ABRASAX_REMOTE_TCP_PROBE=0              # disable the pre-probe; use SSH preflight only
+ABRASAX_REMOTE_CARGO=0                  # disable remote builds entirely for one command
 ```
 
 - 2026-05-29: added the TCP pre-probe + recovery-timeout logic above. Validation on this
@@ -823,7 +823,7 @@ directly, but it can exhaust disk and force full rebuilds when space runs out.
 
 - It never touches a `target/<profile>` dir that has an active `rustc`/`cargo`
   process (scanned via `/proc/<pid>/cmdline`) or that was written to within a recent
-  activity window (default 20min, `JCODE_CLEAN_ACTIVE_WINDOW_MIN`).
+  activity window (default 20min, `ABRASAX_CLEAN_ACTIVE_WINDOW_MIN`).
 - Default mode removes only cross-compile/compat caches (regenerated on demand) and
   reports what it would free.
 - `--aggressive` additionally runs `cargo clean --profile <p>` on stale profiles
@@ -853,11 +853,11 @@ it is busy.
 **currently-available** memory each time it runs:
 
 - `select_build_jobs()` reads `MemAvailable` and divides by a per-job memory budget
-  (default **2048 MiB**, `JCODE_BUILD_MIB_PER_JOB`), then clamps into `[1, nproc]`.
+  (default **2048 MiB**, `ABRASAX_BUILD_MIB_PER_JOB`), then clamps into `[1, nproc]`.
 - It exports `CARGO_BUILD_JOBS`, which overrides `build.jobs` from `.cargo/config.toml`.
 - An idle machine still uses every core; under pressure a fresh build self-throttles
   (e.g. it picked **2 jobs** at ~5.9 GiB available during a parallel-agent build).
-- Explicit `JCODE_BUILD_JOBS` / `CARGO_BUILD_JOBS` always win; invalid values warn and
+- Explicit `ABRASAX_BUILD_JOBS` / `CARGO_BUILD_JOBS` always win; invalid values warn and
   fall back to adaptive sizing. Non-Linux hosts keep the cargo/`.cargo` default.
 
 The committed static fallback in `.cargo/config.toml` was also lowered from `6` to
@@ -865,8 +865,8 @@ The committed static fallback in `.cargo/config.toml` was also lowered from `6` 
 single build on ~15 GiB, but no longer assuming a near-full core count).
 
 ```bash
-JCODE_BUILD_JOBS=2            # hard override the job count for one command
-JCODE_BUILD_MIB_PER_JOB=2048  # memory budget per rustc job (default)
+ABRASAX_BUILD_JOBS=2            # hard override the job count for one command
+ABRASAX_BUILD_MIB_PER_JOB=2048  # memory budget per rustc job (default)
 scripts/dev_cargo.sh --print-setup   # shows build_jobs_status + cargo_build_jobs
 ```
 
@@ -943,7 +943,7 @@ selfdev profile):
 Shipped in `scripts/dev_cargo.sh` (`configure_parallel_frontend`): auto-enabled
 for the `selfdev` profile when a nightly toolchain is installed, isolated to
 `target/selfdev` so it cannot thrash rust-analyzer's `target/debug` cache.
-Controls: `JCODE_PARALLEL_FRONTEND`, `JCODE_FRONTEND_THREADS`, `JCODE_DEV_TOOLCHAIN`.
+Controls: `ABRASAX_PARALLEL_FRONTEND`, `ABRASAX_FRONTEND_THREADS`, `ABRASAX_DEV_TOOLCHAIN`.
 
 ### WIN 2 — prefer mold over lld for the bin link
 
@@ -1088,7 +1088,7 @@ but a multi-agent workflow detail was found that silently destroys cache reuse.
 - sccache is deliberately **skipped** for incremental builds (`maybe_enable_sccache`
   in `dev_cargo.sh`): sccache cannot cache incremental compilation units, so on
   our incremental profiles it would add wrapper overhead for 0% hits. Forcing it
-  on requires `JCODE_SCCACHE=on` (and a non-incremental profile to be useful). ✓
+  on requires `ABRASAX_SCCACHE=on` (and a non-incremental profile to be useful). ✓
 - The nightly parallel front-end (`-Zthreads=4`) is incremental-compatible —
   verified: a genuinely idle no-op rebuild is **0.4s** (pure fingerprint checks),
   so `-Zthreads` does not defeat the dep-graph cache. ✓
